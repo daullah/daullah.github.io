@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amirudaullah's Portfolio - Data Analyst & Enthusiast</title>
+    <title>Amirudaullah's Portfolio</title>
     <style>
         /* General styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #f0f2f5, #e0e4e8);
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
             color: #333;
             scroll-behavior: smooth;
         }
-
         header {
             background-color: rgba(0, 0, 0, 0.7);
             color: #fff;
             padding: 1.5em;
             text-align: center;
         }
-
         nav a {
             color: #fff;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
+            text-transform: uppercase;
             transition: color 0.3s;
         }
-
         nav a:hover {
             color: #feb47b;
         }
-
         section {
             padding: 20px;
             max-width: 1000px;
@@ -43,122 +39,66 @@
             margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-
         h2 {
             color: #333;
             border-bottom: 2px solid #f4f4f4;
             padding-bottom: 10px;
         }
-
-        /* Interactive animations for sections */
-        section {
-            animation: fadeInUp 0.5s ease-in-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Interactive hover for project and certifications with subtle pop-up effect */
-        .project,
-        .certification {
+        /* Interactive hover for project and certifications */
+        .project, .certification {
             margin-bottom: 10px;
-            position: relative;
-            overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
-        .project .project-content,
-        .certification .certification-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            opacity: 0;
-            transition: opacity 0.3s;
-            padding: 15px;
-            text-align: center;
+        .project:hover, .certification:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-
-        .project:hover .project-content,
-        .certification:hover .certification-content {
-            opacity: 0.8;
-        }
-
         footer {
             text-align: center;
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7);
             color: #fff;
         }
-
         /* Skills section */
         .skill {
             margin: 5px 0;
-            display: flex;
-            align-items: center;
         }
-
-        .skill h4 {
-            flex: 1;
-        }
-
         .progress {
             background-color: #f3f3f3;
             border-radius: 20px;
             overflow: hidden;
             margin-top: 5px;
-            width: 70%;
-            height: 10px;
         }
-
         .progress-bar {
             background-color: #4caf50;
-            height: 100%;
+            height: 20px;
+            width: 0%;
             animation: fillProgress 1.5s forwards;
         }
-
         /* Progress animation */
         @keyframes fillProgress {
-            to {
-                width: 100%;
-            }
+            to { width: 100%; }
         }
-
         /* Media Queries for responsiveness */
         @media (max-width: 768px) {
-            header,
-            footer {
+            header, footer {
                 text-align: center;
             }
-
             section {
                 padding: 15px;
                 margin: 10px;
             }
-
             h2 {
                 font-size: 1.5em;
             }
-
             .progress-bar {
                 height: 15px;
             }
         }
     </style>
 </head>
-
 <body>
     <header>
         <h1>Amirudaullah</h1>
@@ -208,30 +148,22 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="project">
-            <div class="project-content">
-                <h3>Exploratory Data Analysis (EDA) Project</h3>
-                <p>Performed data cleaning and analysis for an EDA project, gaining insights from data trends.</p>
-            </div>
+            <h3>Exploratory Data Analysis (EDA) Project</h3>
+            <p>Performed data cleaning and analysis for an EDA project, gaining insights from data trends.</p>
         </div>
         <div class="project">
-            <div class="project-content">
-                <h3>SQL Case Study for E-Commerce Analysis</h3>
-                <p>Conducted a SQL analysis to derive meaningful insights for an e-commerce dataset.</p>
-            </div>
+            <h3>SQL Case Study for E-Commerce Analysis</h3>
+            <p>Conducted a SQL analysis to derive meaningful insights for an e-commerce dataset.</p>
         </div>
     </section>
 
     <section id="certifications">
         <h2>Certifications</h2>
         <div class="certification">
-            <div class="certification-content">
-                <p><a href="https://tinyurl.com/yc856bt2" target="_blank">Microsoft Power BI Certification</a></p>
-            </div>
+            <p><a href="https://tinyurl.com/yc856bt2" target="_blank">Microsoft Power BI Certification</a></p>
         </div>
         <div class="certification">
-            <div class="certification-content">
-                <p><a href="https://tinyurl.com/269re9ev" target="_blank">SQL Analytics Case Study Certification</a></p>
-            </div>
+            <p><a href="https://tinyurl.com/269re9ev" target="_blank">SQL Analytics Case Study Certification</a></p>
         </div>
     </section>
 
@@ -245,5 +177,4 @@
         <p>&copy; 2024 Amirudaullah</p>
     </footer>
 </body>
-
 </html>
