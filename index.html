@@ -3,57 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amirudaullah's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Resume Repository</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .about-me {
+            background: url('path_to_your_image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .section {
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        .icon {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .thumbnail {
+            width: 50px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Amirudaullah</h1>
-        <p>Order Management Analyst | Data Analysis Enthusiast</p>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm an Order Management Analyst with over 2 years of experience at British Telecom, specializing in optimizing order fulfillment processes and improving customer satisfaction. Skilled in Excel, SQL, Power BI, and Python.</p>
-    </section>
-
-    <section id="projects">
+    <div class="about-me">
+        <h1>About Me</h1>
+        <p>A results-driven Order Management Analyst with expertise in order fulfillment processes, customer satisfaction, and data-driven insights to improve operational efficiency.</p>
+    </div>
+    <div class="section contacts">
+        <h2>Contacts</h2>
+        <p><img src="whatsapp_icon.png" alt="WhatsApp" class="icon">8337047955</p>
+        <p><img src="email_icon.png" alt="Email" class="icon">amirudaullah@gmail.com</p>
+        <p><img src="address_icon.png" alt="Address" class="icon">229 Tiljala Road, Kolkata 700046</p>
+    </div>
+    <div class="section experience">
+        <h2>Experience</h2>
+        <ul>
+            <li>Order Management Professional at British Telecom (2022 – Present)</li>
+            <li>Senior Associate at IBM Daksh (March 2017 – January 2018)</li>
+            <li>Senior Associate at Wipro (March 2016 – October 2016)</li>
+            <li>Associate at Aegis (May 2016 – February 2016)</li>
+        </ul>
+    </div>
+    <div class="section projects">
         <h2>Projects</h2>
-        <div class="project">
-            <h3>Exploratory Data Analysis (EDA) Project</h3>
-            <p>Performed data cleaning and analysis to uncover insights from data trends.</p>
-        </div>
-        <div class="project">
-            <h3>SQL Case Study for E-Commerce Analysis</h3>
-            <p>Conducted SQL-based analysis to derive key insights for an e-commerce dataset.</p>
-        </div>
-    </section>
-
-    <section id="resume">
-        <h2>Resume</h2>
-        <!-- Here is the resume download link -->
-        <a href="Amirudaullah_Resume.pdf" download>Download My Resume</a>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-icons">
-            <a href="mailto:amirudaullah@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-            <a href="https://wa.me/918337047955" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Amirudaullah</p>
-    </footer>
+        <!-- Add your projects here -->
+    </div>
+    <div class="section certifications">
+        <h2>Certifications</h2>
+        <p><img src="certificate_thumbnail.jpg" alt="Power BI Certification" class="thumbnail"><a href="https://tinyurl.com/yc856bt2">Microsoft Power BI Certification</a></p>
+        <p><img src="certificate_thumbnail.jpg" alt="SQL Certification" class="thumbnail"><a href="https://tinyurl.com/269re9ev">SQL for Data Analytics</a></p>
+    </div>
+    <div class="section skills">
+        <h2>Skills</h2>
+        <!-- List your skills here -->
+    </div>
 </body>
 </html>
