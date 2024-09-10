@@ -10,21 +10,26 @@
             margin: 0;
             padding: 0;
             color: #333;
-            background-color: #f4f4f4; /* Light grey background for the whole page */
+            background-color: #f4f4f4;
         }
         .about-me {
-            background: url('https://drive.google.com/file/d/1iIsnlwtoMhgnZDWjtuomedR2ik34BE7P/view?usp=drivesdk') no-repeat center center; /* Replace with your actual image URL */
+            background: url('IMG-20240910-WA0002.jpg') no-repeat center center; /* Background image */
             background-size: cover;
             color: white;
             padding: 40px;
             text-align: center;
+            animation: fadeIn 2s ease-in-out; /* Apply fade-in animation */
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
         .section {
             padding: 20px;
-            background-color: white; /* White background for content sections */
+            background-color: white;
             margin: 10px;
-            border-radius: 8px; /* Rounded corners for the sections */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for 3D effect */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .icon {
             vertical-align: middle;
@@ -37,18 +42,18 @@
             margin-right: 10px;
         }
         a {
-            color: #1a0dab; /* Google link blue */
+            color: #1a0dab;
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
         }
         ul {
-            list-style-type: none; /* No bullets for the list */
+            list-style-type: none;
             padding: 0;
         }
         li {
-            margin-bottom: 10px; /* Space between list items */
+            margin-bottom: 10px;
         }
     </style>
 </head>
