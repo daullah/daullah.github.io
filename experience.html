@@ -9,43 +9,57 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
             background-image: url('https://images.unsplash.com/photo-1508051123996-69f8caf4891e');
             background-size: cover;
             background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             color: white;
         }
         nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
             display: flex;
             justify-content: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            position: sticky;
-            top: 0;
+            padding: 0;
         }
-        nav a {
-            color: white;
-            text-decoration: none;
+        nav ul li {
             margin: 0 15px;
-            font-size: 1.2em;
-            transition: color 0.3s;
         }
-        nav a:hover {
+        nav ul li a {
             color: #f4e04d;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #fff;
         }
         .container {
-            max-width: 1000px;
-            margin: 100px auto;
-            padding: 40px 20px;
-            background-color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 1000px;
+            margin-top: 80px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         h2 {
-            text-align: center;
             font-size: 3em;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: #f4e04d;
-            text-shadow: 2px 2px 8px #000;
+            text-shadow: 2px 2px 4px #000;
         }
         .experience-item {
             background-color: rgba(255, 255, 255, 0.1);
@@ -72,33 +86,35 @@
 </head>
 <body>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="projects.html">Projects</a>
-        <a href="skills.html">Skills</a>
-        <a href="contact.html">Contact</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
     <div class="container">
         <h2>Professional Experience</h2>
         <div class="experience-item">
             <h3>Order Management Professional - British Telecom</h3>
             <p>Kolkata | 2022 – Present</p>
-            <p>Verified and validated customer orders for accuracy, including product specifications, pricing, and delivery information. Entered and updated order data into the company's order management system.</p>
+            <p>Verified and validated customer orders for accuracy, including product specifications, pricing, and delivery information.</p>
         </div>
         <div class="experience-item">
             <h3>Senior Associate - IBM Daksh</h3>
             <p>Kolkata | March 2017 – January 2018</p>
-            <p>Received and assessed customer complaints submitted through multiple channels. Conducted root cause analysis and developed targeted solutions for resolution, ensuring high customer satisfaction.</p>
+            <p>Received and assessed customer complaints, developed solutions for high customer satisfaction.</p>
         </div>
         <div class="experience-item">
             <h3>Senior Associate - Wipro</h3>
             <p>Kolkata | March 2016 – October 2016</p>
-            <p>Followed up on escalated issues, ensuring prompt resolution. Accurately documented support interactions and resolutions in the ticketing system.</p>
+            <p>Followed up on escalated issues, ensuring prompt resolution, and documented interactions in the system.</p>
         </div>
         <div class="experience-item">
             <h3>Associate - Aegis</h3>
             <p>Kolkata | May 2016 – February 2016</p>
-            <p>Processed and reviewed invoices for accuracy and compliance with company policies. Reconciled accounts and resolved discrepancies in billing statements.</p>
+            <p>Processed and reviewed invoices for accuracy and compliance with company policies.</p>
         </div>
     </div>
 </body>
