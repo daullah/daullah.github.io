@@ -9,62 +9,53 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1496347646636-ea47f7d6e1e0');
+            background-color: #f4f4f4;
+            background-image: url('https://images.unsplash.com/photo-1496104679561-38f60be7e8c4');
             background-size: cover;
             background-position: center;
-            color: white;
-        }
-        nav {
             display: flex;
             justify-content: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            position: sticky;
-            top: 0;
-        }
-        nav a {
+            align-items: center;
+            height: 100vh;
             color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #f4e04d;
         }
         .container {
-            max-width: 900px;
-            margin: 100px auto 0 auto;
-            padding: 50px 20px;
-            background-color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
             text-align: center;
+            max-width: 600px;
         }
         h2 {
             font-size: 3em;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: #f4e04d;
-            text-shadow: 2px 2px 8px #000;
+            text-shadow: 2px 2px 4px #000;
         }
         .contact-info {
-            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
             font-size: 1.3em;
         }
+        .contact-info p {
+            margin: 0;
+        }
         .contact-info img {
-            vertical-align: middle;
-            margin-right: 10px;
-            width: 30px;
+            width: 40px;
             height: auto;
+            margin-right: 15px;
         }
         .cta {
             display: inline-block;
-            padding: 15px 30px;
-            margin-top: 20px;
+            margin-top: 30px;
+            padding: 12px 24px;
             background-color: #f4e04d;
             color: #333;
-            font-size: 1.2em;
             text-decoration: none;
+            font-size: 1.2em;
             border-radius: 5px;
             transition: background-color 0.3s;
         }
@@ -75,21 +66,14 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="experience.html">Professional Experience</a>
-        <a href="projects.html">Projects</a>
-        <a href="skills.html">Skills</a>
-    </nav>
     <div class="container">
         <h2>Contact Me</h2>
         <div class="contact-info">
-            <p><img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp Icon"> 8337047955</p>
+            <p><img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Phone Icon"> 8337047955</p>
             <p><img src="https://img.icons8.com/ios-filled/50/ffffff/gmail.png" alt="Email Icon"> amirudaullah@gmail.com</p>
             <p><img src="https://img.icons8.com/ios-filled/50/ffffff/marker.png" alt="Location Icon"> 229 Tiljala Road, Kolkata 700046</p>
         </div>
-        <a class="cta" href="mailto:amirudaullah@gmail.com">Send an Email</a>
+        <a class="cta" href="mailto:amirudaullah@gmail.com">Drop me an Email</a>
     </div>
 </body>
 </html>
