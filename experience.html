@@ -6,21 +6,52 @@
     <title>Professional Experience - Amirudaullah</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1527691922001-55b9b6c7d5a5');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 20px;
+            position: sticky;
+            top: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f4e04d;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
         }
         h2 {
-            color: #333;
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #f4e04d;
         }
         ul {
             list-style-type: none;
             padding: 0;
         }
-        li {
-            font-size: 1.1em;
-            margin-bottom: 10px;
+        ul li {
+            font-size: 1.3em;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -32,12 +63,14 @@
         <a href="skills.html">Skills</a>
         <a href="contact.html">Contact</a>
     </nav>
-    <h2>Professional Experience</h2>
-    <ul>
-        <li>Order Management Professional at British Telecom (2022 – Present)</li>
-        <li>Senior Associate at IBM Daksh (March 2017 – January 2018)</li>
-        <li>Senior Associate at Wipro (March 2016 – October 2016)</li>
-        <li>Associate at Aegis (May 2016 – February 2016)</li>
-    </ul>
+    <div class="container">
+        <h2>Professional Experience</h2>
+        <ul>
+            <li>Order Management Professional at British Telecom (2022 – Present)</li>
+            <li>Senior Associate at IBM Daksh (March 2017 – January 2018)</li>
+            <li>Senior Associate at Wipro (March 2016 – October 2016)</li>
+            <li>Associate at Aegis (May 2016 – February 2016)</li>
+        </ul>
+    </div>
 </body>
 </html>
