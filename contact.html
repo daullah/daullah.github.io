@@ -20,6 +20,31 @@
             min-height: 100vh;
             color: white;
         }
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 10px 0;
+            position: absolute;
+            top: 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #f4e04d;
+        }
         .container {
             background-color: rgba(0, 0, 0, 0.75);
             padding: 40px;
@@ -28,6 +53,7 @@
             text-align: center;
             max-width: 600px;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            margin-top: 60px; /* Added to accommodate the navigation bar */
         }
         .container:hover {
             transform: translateY(-10px);
@@ -69,7 +95,6 @@
             background-color: #333;
             color: #f4e04d;
         }
-        /* Add Google Maps and contact form */
         .map {
             margin-top: 20px;
             width: 100%;
@@ -104,7 +129,20 @@
     </style>
 </head>
 <body>
+    <!-- Navigation bar with links -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
     <h2>Contact Me</h2>
+
     <div class="container">
         <div class="contact-info">
             <p><img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Phone Icon"> 8337047955</p>
