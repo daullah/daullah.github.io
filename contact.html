@@ -6,16 +6,71 @@
     <title>Contact - Amirudaullah</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1496347646636-ea47f7d6e1e0');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 20px;
+            position: sticky;
+            top: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f4e04d;
+        }
+        .container {
+            max-width: 900px;
+            margin: 100px auto 0 auto;
+            padding: 50px 20px;
+            background-color: rgba(0, 0, 0, 0.85);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
         h2 {
-            color: #333;
+            font-size: 3em;
+            margin-bottom: 30px;
+            color: #f4e04d;
+            text-shadow: 2px 2px 8px #000;
         }
-        p {
-            font-size: 1.1em;
+        .contact-info {
+            margin-bottom: 30px;
+            font-size: 1.3em;
+        }
+        .contact-info img {
+            vertical-align: middle;
+            margin-right: 10px;
+            width: 30px;
+            height: auto;
+        }
+        .cta {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 20px;
+            background-color: #f4e04d;
+            color: #333;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .cta:hover {
+            background-color: #333;
+            color: #f4e04d;
         }
     </style>
 </head>
@@ -27,9 +82,14 @@
         <a href="projects.html">Projects</a>
         <a href="skills.html">Skills</a>
     </nav>
-    <h2>Contact</h2>
-    <p>Phone: 8337047955</p>
-    <p>Email: amirudaullah@gmail.com</p>
-    <p>Address: 229 Tiljala Road, Kolkata 700046</p>
+    <div class="container">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <p><img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp Icon"> 8337047955</p>
+            <p><img src="https://img.icons8.com/ios-filled/50/ffffff/gmail.png" alt="Email Icon"> amirudaullah@gmail.com</p>
+            <p><img src="https://img.icons8.com/ios-filled/50/ffffff/marker.png" alt="Location Icon"> 229 Tiljala Road, Kolkata 700046</p>
+        </div>
+        <a class="cta" href="mailto:amirudaullah@gmail.com">Send an Email</a>
+    </div>
 </body>
 </html>
