@@ -6,16 +6,49 @@
     <title>About Me - Amirudaullah</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1485768071412-1a6c8b884e6d');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 20px;
+            position: sticky;
+            top: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f4e04d;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
         }
         h2 {
-            color: #333;
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #f4e04d;
         }
         p {
             font-size: 1.2em;
+            line-height: 1.8;
+            text-align: justify;
         }
     </style>
 </head>
@@ -27,7 +60,9 @@
         <a href="skills.html">Skills</a>
         <a href="contact.html">Contact</a>
     </nav>
-    <h2>About Me</h2>
-    <p>Results-driven Order Management Analyst with over 2 years of experience at British Telecom. Demonstrated expertise in optimizing order fulfillment processes ensuring accurate order capture and enhancing customer satisfaction.</p>
+    <div class="container">
+        <h2>About Me</h2>
+        <p>Results-driven Order Management Analyst with over 2 years of experience at British Telecom. Demonstrated expertise in optimizing order fulfillment processes ensuring accurate order capture and enhancing customer satisfaction. Proficient in utilizing order management systems, collaborating with cross-functional teams, and leveraging data-driven insights to improve the customer order journey. Adept at process improvement, data analysis, and problem-solving to drive operational efficiency.</p>
+    </div>
 </body>
 </html>
