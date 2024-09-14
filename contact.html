@@ -16,7 +16,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            flex-direction: column;
+            min-height: 100vh;
             color: white;
         }
         .container {
@@ -72,7 +73,7 @@
         .map {
             margin-top: 20px;
             width: 100%;
-            height: 300px;
+            height: 450px;
             border: 0;
             border-radius: 10px;
         }
@@ -103,19 +104,19 @@
     </style>
 </head>
 <body>
+    <h2>Contact Me</h2>
     <div class="container">
-        <h2>Contact Me</h2>
         <div class="contact-info">
             <p><img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Phone Icon"> 8337047955</p>
             <p><img src="https://img.icons8.com/ios-filled/50/ffffff/gmail.png" alt="Email Icon"> amirudaullah@gmail.com</p>
             <p><img src="https://img.icons8.com/ios-filled/50/ffffff/marker.png" alt="Location Icon"> 229 Tiljala Road, Kolkata 700046</p>
         </div>
         <a class="cta" href="mailto:amirudaullah@gmail.com">Drop me an Email</a>
-        
-        <!-- Add Google Map -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.12181887015!2d88.37153807513761!3d22.537108979517004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02779807a95e3f%3A0xff2e984c5dd92afc!2s229%2C%20Tiljala%20Rd%2C%20Gobra%2C%20Kolkata%2C%20West%20Bengal%20700046!5e0!3m2!1sen!2sin!4v1726337186243!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        
-        <!-- Add Contact Form using Formspree -->
+
+        <!-- Google Maps Embed -->
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.12181887015!2d88.37153807513761!3d22.537108979517004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02779807a95e3f%3A0xff2e984c5dd92afc!2s229%2C%20Tiljala%20Rd%2C%20Gobra%2C%20Kolkata%2C%20West%20Bengal%20700046!5e0!3m2!1sen!2sin!4v1726337186243!5m2!1sen!2sin" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <!-- Formspree Contact Form -->
         <form action="https://formspree.io/f/mblreawa" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="_replyto" placeholder="Your Email" required>
