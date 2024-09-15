@@ -10,30 +10,45 @@
             margin: 0;
             padding: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: #121212; /* Dark background for better contrast */
-            color: white;
+            background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* Modern, vibrant data-themed background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff; /* Light color for better readability on a dark background */
             min-height: 100vh;
             position: relative;
+        }
+
+        /* Dark gradient overlay for better text visibility */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay for better contrast */
+            z-index: 0;
         }
 
         .container {
             width: 80%;
             margin: 0 auto;
             position: relative;
-            padding-top: 100px; /* Adjusted padding */
+            padding-top: 100px;
         }
 
         .timeline {
             position: relative;
-            max-width: 900px; /* Adjusted width */
+            max-width: 900px;
             margin: 50px auto;
         }
 
         .timeline::after {
             content: '';
             position: absolute;
-            width: 2px; /* Thinner line */
-            background-color: #f4e04d;
+            width: 2px;
+            background-color: #f4e04d; /* Bright color for contrast */
             top: 0;
             bottom: 0;
             left: 50%;
@@ -47,10 +62,10 @@
             box-sizing: border-box;
         }
 
-        /* Alternate positioning for left and right items */
+        /* Styling for left and right items */
         .timeline-item-left {
             left: 0;
-            border-right: 5px solid #f4e04d; /* Added border for better separation */
+            border-right: 5px solid #f4e04d;
         }
 
         .timeline-item-right {
@@ -71,15 +86,15 @@
         }
 
         .timeline-item-left .timeline-date {
-            right: -145px; /* Adjusted position */
+            right: -145px;
         }
 
         .timeline-item-right .timeline-date {
-            left: -145px; /* Adjusted position */
+            left: -145px;
         }
 
         .experience-content {
-            background: rgba(0, 0, 0, 0.6); /* Slightly transparent background */
+            background: rgba(0, 0, 0, 0.6);
             padding: 15px;
             border-radius: 5px;
             position: relative;
@@ -90,16 +105,18 @@
             font-size: 1.2em;
             font-weight: bold;
             margin-bottom: 10px;
+            color: #f4e04d; /* Gold color to pop against dark backgrounds */
         }
 
         .company-logo {
-            height: 40px; /* Adjusted size */
+            height: 40px;
             vertical-align: middle;
             margin-right: 10px;
         }
 
         p {
             margin: 5px 0;
+            color: #fff; /* Light font color for readability */
         }
 
         @media (max-width: 768px) {
@@ -141,7 +158,7 @@
             </div>
             <div class="timeline-item timeline-item-right">
                 <div class="timeline-date">Mar 2016 – Oct 2016</div>
-                <div the="experience-content">
+                <div class="experience-content">
                     <img src="wipro-logo.svg" alt="Wipro Logo" class="company-logo">
                     <span class="role-company">Senior Associate at Wipro</span>
                     <p>Resolved escalated issues with a focus on prompt resolutions, improving customer retention by 15%.</p>
