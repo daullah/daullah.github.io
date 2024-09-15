@@ -20,7 +20,7 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
         }
         /* Dark gradient overlay */
         body::before {
@@ -36,57 +36,105 @@
         nav {
             display: flex;
             justify-content: center;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 15px 0;
-            position: sticky;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 20px 0;
+            position: fixed;
             top: 0;
-            z-index: 10;
             width: 100%;
+            z-index: 10;
         }
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2em;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
         nav a:hover {
             color: #f4e04d;
         }
         .container {
-            text-align: center;
             z-index: 1;
-            padding: 20px;
+            padding-top: 120px;
+            width: 80%;
+            margin: 0 auto;
         }
         h2 {
             font-size: 3.5em;
             color: #f4e04d;
             text-shadow: 2px 2px 4px #000;
+            text-align: center;
             margin-bottom: 40px;
         }
-        .experience-item {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            margin-bottom: 20px;
-            padding: 30px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .timeline {
+            position: relative;
+            margin: 0;
+            padding: 20px 0;
+            list-style: none;
         }
-        .experience-item:hover {
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #f4e04d;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .timeline-item-left {
+            left: 0;
+            text-align: right;
+        }
+        .timeline-item-right {
+            left: 50%;
+            text-align: left;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: calc(100% - 10px);
+            width: 20px;
+            height: 20px;
+            background: #f4e04d;
+            border-radius: 50%;
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+        .timeline-item-right::before {
+            left: -10px;
+        }
+        .timeline-item:hover::before {
+            transform: scale(1.2);
+        }
+        .experience-content {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .experience-content:hover {
             transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(255, 255, 255, 0.3);
         }
         h3 {
-            font-size: 2em;
+            font-size: 1.8em;
             color: #f4e04d;
         }
         p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #f4f4f4;
         }
-        .experience-icon {
+        .company-logo {
             width: 50px;
-            height: 50px;
+            height: auto;
             margin-bottom: 15px;
         }
     </style>
@@ -103,38 +151,52 @@
     <div class="container">
         <h2>Professional Experience</h2>
 
-        <!-- Experience Section with Icons -->
-        <div class="experience-item">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/engineering.png" alt="BT Icon" class="experience-icon">
-            <h3>Order Management Professional - British Telecom</h3>
-            <p>Kolkata | 2022 – Present</p>
-            <p>Developed a software update that reduced system errors by 30%, improving customer satisfaction by 20%.</p>
-            <p>Led a cross-functional team to improve the order management process, reducing errors by 15%.</p>
-        </div>
+        <!-- Dynamic Timeline Section -->
+        <ul class="timeline">
+            <!-- British Telecom Experience -->
+            <li class="timeline-item timeline-item-left">
+                <div class="experience-content">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/48/British_Telecom_logo.svg" alt="British Telecom Logo" class="company-logo">
+                    <h3>Order Management Professional - British Telecom</h3>
+                    <p>Kolkata | 2022 – Present</p>
+                    <p>Developed a software update that reduced system errors by 30%, improving customer satisfaction by 20%.</p>
+                    <p>Led a cross-functional team to improve the order management process, reducing errors by 15%.</p>
+                </div>
+            </li>
 
-        <div class="experience-item">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/customer-support.png" alt="IBM Icon" class="experience-icon">
-            <h3>Senior Associate - IBM Daksh</h3>
-            <p>Kolkata | March 2017 – January 2018</p>
-            <p>Resolved customer complaints through root cause analysis, achieving a 90% satisfaction rate.</p>
-            <p>Collaborated with teams to reduce complaint resolution times by 25%.</p>
-        </div>
+            <!-- IBM Daksh Experience -->
+            <li class="timeline-item timeline-item-right">
+                <div class="experience-content">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/800px-IBM_logo.svg.png" alt="IBM Logo" class="company-logo">
+                    <h3>Senior Associate - IBM Daksh</h3>
+                    <p>Kolkata | March 2017 – January 2018</p>
+                    <p>Resolved customer complaints through root cause analysis, achieving a 90% satisfaction rate.</p>
+                    <p>Collaborated with teams to reduce complaint resolution times by 25%.</p>
+                </div>
+            </li>
 
-        <div class="experience-item">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/headset.png" alt="Wipro Icon" class="experience-icon">
-            <h3>Senior Associate - Wipro</h3>
-            <p>Kolkata | March 2016 – October 2016</p>
-            <p>Resolved escalated issues with a focus on prompt resolutions, improving customer retention by 15%.</p>
-            <p>Documented support interactions, resulting in a 30% improvement in follow-up times.</p>
-        </div>
+            <!-- Wipro Experience -->
+            <li class="timeline-item timeline-item-left">
+                <div class="experience-content">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Wipro_Primary_Logo_Color_RGB.svg/1280px-Wipro_Primary_Logo_Color_RGB.svg.png" alt="Wipro Logo" class="company-logo">
+                    <h3>Senior Associate - Wipro</h3>
+                    <p>Kolkata | March 2016 – October 2016</p>
+                    <p>Resolved escalated issues with a focus on prompt resolutions, improving customer retention by 15%.</p>
+                    <p>Documented support interactions, resulting in a 30% improvement in follow-up times.</p>
+                </div>
+            </li>
 
-        <div class="experience-item">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/invoice.png" alt="Aegis Icon" class="experience-icon">
-            <h3>Associate - Aegis</h3>
-            <p>Kolkata | May 2016 – February 2016</p>
-            <p>Processed invoices for accuracy, ensuring compliance with company policies.</p>
-            <p>Led a process improvement initiative, which reduced invoice discrepancies by 10%.</p>
-        </div>
+            <!-- Aegis Experience -->
+            <li class="timeline-item timeline-item-right">
+                <div class="experience-content">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Aegis_Logo.svg" alt="Aegis Logo" class="company-logo">
+                    <h3>Associate - Aegis</h3>
+                    <p>Kolkata | May 2016 – February 2016</p>
+                    <p>Processed invoices for accuracy, ensuring compliance with company policies.</p>
+                    <p>Led a process improvement initiative, which reduced invoice discrepancies by 10%.</p>
+                </div>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
