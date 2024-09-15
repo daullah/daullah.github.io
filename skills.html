@@ -4,142 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills - Amirudaullah</title>
+    <!-- Google Fonts for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');
+            font-family: 'Montserrat', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); 
             background-size: cover;
             background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-attachment: fixed;
+            color: #fff;
             min-height: 100vh;
-            color: white;
+            position: relative;
         }
-        nav {
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            padding: 10px 0;
-            position: fixed;
+
+        /* Dark gradient overlay */
+        body::before {
+            content: '';
+            position: absolute;
             top: 0;
-            z-index: 1000;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+            z-index: 0;
         }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent background */
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            text-align: center;
         }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #f4e04d;
+
+        nav a {
+            color: #f4e04d; /* Gold color */
             text-decoration: none;
+            margin: 0 20px;
             font-size: 1.2em;
+            font-weight: 700;
             transition: color 0.3s ease;
         }
-        nav ul li a:hover {
+
+        nav a:hover {
+            color: #fff; /* White on hover */
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+            padding-top: 120px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            color: #f4e04d;
+            margin-bottom: 20px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .skill-item {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .skill-item h2 {
+            font-size: 1.5em;
+            color: #f4e04d;
+            margin-bottom: 10px;
+        }
+
+        .skill-item p {
+            font-size: 1.1em;
             color: #fff;
         }
-        .container {
-            background-color: rgba(0, 0, 0, 0.75);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            max-width: 900px;
-            margin-top: 100px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .skill-item {
+                width: 90%;
+            }
         }
-        h2 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: #f4e04d;
-            text-shadow: 2px 2px 4px #000;
-        }
-        p {
-            font-size: 1.3em;
-            line-height: 1.8;
-            text-align: center;
-        }
-        /* Skill Bars */
-        .skill-bar {
-            margin: 15px 0;
-        }
-        .bar {
-            background-color: #ddd;
-            border-radius: 25px;
-            overflow: hidden;
-            height: 30px;
-            width: 100%;
-        }
-        .progress {
-            background-color: #f4e04d;
-            height: 100%;
-            border-radius: 25px;
-            transition: width 1s ease;
-        }
-        .progress.sql { width: 70%; } /* Adjust skill levels */
-        .progress.powerbi { width: 60%; }
-        .progress.python { width: 50%; }
-        .progress.excel { width: 80%; }
-        .progress.etl { width: 65%; }
     </style>
 </head>
 <body>
+    <!-- Navigation bar -->
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
     <div class="container">
-        <h2>Skills</h2>
-
-        <!-- Skills Section with descriptions -->
-        <div class="skill-bar">
-            <p><strong>SQL</strong> - Recently certified in SQL for Data Analytics, I am proficient in database management with DDL and DML. I am currently improving my skills in writing complex queries and working on optimization techniques.</p>
-            <div class="bar">
-                <div class="progress sql"></div>
+        <h1>My Skills</h1>
+        <div class="skills-list">
+            <div class="skill-item">
+                <h2>SQL</h2>
+                <p>Data querying, manipulation, JOINs, and complex queries for analytics.</p>
+            </div>
+            <div class="skill-item">
+                <h2>Python</h2>
+                <p>Data analysis with Pandas, NumPy, and Matplotlib for visual insights.</p>
+            </div>
+            <div class="skill-item">
+                <h2>Power BI</h2>
+                <p>Interactive dashboard creation, data modeling, and DAX expressions.</p>
+            </div>
+            <div class="skill-item">
+                <h2>Excel</h2>
+                <p>Pivot tables, advanced formulas, VLOOKUP, data validation, and automation.</p>
+            </div>
+            <div class="skill-item">
+                <h2>Data Analysis</h2>
+                <p>Exploratory data analysis, data cleaning, and generating business insights.</p>
             </div>
         </div>
-
-        <div class="skill-bar">
-            <p><strong>Power BI</strong> - Certified in Microsoft Power BI, I can create interactive dashboards, conduct data modeling, and visualize complex datasets. I am continuously expanding my knowledge of DAX to enhance report functionality.</p>
-            <div class="bar">
-                <div class="progress powerbi"></div>
-            </div>
-        </div>
-
-        <div class="skill-bar">
-            <p><strong>Python</strong> - With a certification in Python basics, I have experience in data manipulation using libraries like Pandas and NumPy. I am working to improve my understanding of advanced libraries and data visualization tools such as Matplotlib.</p>
-            <div class="bar">
-                <div class="progress python"></div>
-            </div>
-        </div>
-
-        <div class="skill-bar">
-            <p><strong>Excel</strong> - Certified in Advanced Excel, I have expertise in PivotTables, Power Query, data validation, and using advanced functions. I use Excel extensively for data cleaning and preliminary analysis.</p>
-            <div class="bar">
-                <div class="progress excel"></div>
-            </div>
-        </div>
-
-        <div class="skill-bar">
-            <p><strong>ETL Processes</strong> - I am knowledgeable in Extract, Transform, Load (ETL) processes, working on data integration tasks to ensure accurate data flow between systems. I am still expanding my skill set in this area.</p>
-            <div class="bar">
-                <div class="progress etl"></div>
-            </div>
-        </div>
-
     </div>
 </body>
 </html>
