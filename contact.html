@@ -4,165 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Amirudaullah</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            background-image: url('https://images.unsplash.com/photo-1496104679561-38f60be7e8c4');
-            background-size: cover;
-            background-position: center;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            min-height: 100vh;
             color: white;
+        }
+        /* Gradient Background Animation */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            background-size: 200% 200%;
+            z-index: -1;
+            animation: gradientAnimation 10s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         nav {
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.85); /* Darker for better visibility */
-            padding: 10px 0;
-            position: fixed; /* Fixed header */
-            top: 0;
-            z-index: 100;
-        }
-        nav ul {
-            list-style: none;
             display: flex;
             justify-content: center;
-            padding: 0;
-            margin: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
         }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
+        nav a {
             color: white;
             text-decoration: none;
+            margin: 0 15px;
             font-size: 1.2em;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
-        nav ul li a:hover {
-            color: #f4e04d;
+        nav a:hover {
+            color: #ffdd57;
         }
         .container {
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+            max-width: 1200px;
+            padding: 50px;
             background-color: rgba(0, 0, 0, 0.75);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            max-width: 600px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            margin-top: 100px; /* Increased to clear the fixed header */
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
         }
-        .container:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+        .left {
+            flex: 1;
+            padding-right: 20px;
+            text-align: left;
+        }
+        .right {
+            flex: 1;
+            padding-left: 20px;
         }
         h2 {
             font-size: 3em;
             margin-bottom: 20px;
-            color: #f4e04d;
-            text-shadow: 2px 2px 4px #000;
+            color: #ffdd57;
+        }
+        p {
+            font-size: 1.3em;
+            line-height: 1.6;
         }
         .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.3em;
+            margin-top: 20px;
         }
-        .contact-info p {
-            margin: 0;
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        .contact-info div:hover {
+            transform: translateX(10px);
         }
         .contact-info img {
             width: 40px;
             height: auto;
             margin-right: 15px;
         }
+        /* CTA Button */
         .cta {
             display: inline-block;
             margin-top: 30px;
-            padding: 12px 24px;
-            background-color: #f4e04d;
+            padding: 12px 36px;
+            background-color: #ffdd57;
             color: #333;
+            font-size: 1.3em;
             text-decoration: none;
-            font-size: 1.2em;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
         .cta:hover {
             background-color: #333;
-            color: #f4e04d;
+            color: #ffdd57;
+            transform: scale(1.05);
         }
-        .map {
-            margin-top: 20px;
-            width: 100%;
-            height: 450px;
+        /* Map Container */
+        .map-container {
+            margin-top: 30px;
+        }
+        iframe {
             border: 0;
-            border-radius: 10px;
-        }
-        form {
-            margin-top: 20px;
-        }
-        input, textarea {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: none;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #f4e04d;
-            color: #333;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #333;
-            color: #f4e04d;
+            height: 300px;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation bar with links -->
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
-    <h2>Contact Me</h2>
-
     <div class="container">
-        <div class="contact-info">
-            <p><img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Phone Icon"> 8337047955</p>
-            <p><img src="https://img.icons8.com/ios-filled/50/ffffff/gmail.png" alt="Email Icon"> amirudaullah@gmail.com</p>
-            <p><img src="https://img.icons8.com/ios-filled/50/ffffff/marker.png" alt="Location Icon"> 229 Tiljala Road, Kolkata 700046</p>
+        <div class="left">
+            <h2>Contact Me</h2>
+            <p>Have questions or collaboration ideas? Feel free to get in touch. You can reach me via email, phone, or visit me at my location.</p>
+            <div class="contact-info">
+                <div><img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Phone"><p>+91 8337047955</p></div>
+                <div><img src="https://img.icons8.com/ios-filled/50/ffffff/gmail.png" alt="Email"><p>amirudaullah@gmail.com</p></div>
+                <div><img src="https://img.icons8.com/ios-filled/50/ffffff/marker.png" alt="Location"><p>229 Tiljala Road, Kolkata, 700046</p></div>
+            </div>
+            <a href="mailto:amirudaullah@gmail.com" class="cta">Drop me an Email</a>
         </div>
-        <a class="cta" href="mailto:amirudaullah@gmail.com">Drop me an Email</a>
-
-        <!-- Google Maps Embed -->
-        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.12181887015!2d88.37153807513761!3d22.537108979517004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02779807a95e3f%3A0xff2e984c5dd92afc!2s229%2C%20Tiljala%20Rd%2C%20Gobra%2C%20Kolkata%2C%20West%20Bengal%20700046!5e0!3m2!1sen!2sin!4v1726337186243!5m2!1sen!2sin" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-        <!-- Formspree Contact Form -->
-        <form action="https://forms.gle/Uw9V8v2aF2yGyUEm6" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="_replyto" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <div class="right">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.12181887015!2d88.37153807513761!3d22.537108979517004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02779807a95e3f%3A0xff2e984c5dd92afc!2s229%2C%20Tiljala%20Rd%2C%20Gobra%2C%20Kolkata%2C%20West%20Bengal%20700046!5e0!3m2!1sen!2sin!4v1726337186243!5m2!1sen!2sin" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 </body>
 </html>
