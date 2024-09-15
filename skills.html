@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills - Amirudaullah</title>
-    <!-- Google Fonts for modern look -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); 
+            background-image: url('https://cdn.pixabay.com/photo/2018/01/14/23/12/network-3080997_1280.jpg'); /* Modern, tech-oriented background */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -34,7 +33,7 @@
 
         /* Navigation Bar */
         nav {
-            background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent background */
+            background-color: rgba(0, 0, 0, 0.85);
             padding: 15px 0;
             position: fixed;
             width: 100%;
@@ -44,7 +43,7 @@
         }
 
         nav a {
-            color: #f4e04d; /* Gold color */
+            color: #f4e04d; /* Gold */
             text-decoration: none;
             margin: 0 20px;
             font-size: 1.2em;
@@ -53,54 +52,66 @@
         }
 
         nav a:hover {
-            color: #fff; /* White on hover */
+            color: #fff;
         }
 
         .container {
-            width: 80%;
+            width: 85%;
             margin: 0 auto;
             position: relative;
             padding-top: 120px;
+            z-index: 1;
         }
 
         h1 {
             text-align: center;
             font-size: 3em;
             color: #f4e04d;
+            margin-bottom: 40px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .skill-card img {
+            width: 60px;
+            height: 60px;
             margin-bottom: 20px;
         }
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .skill-item {
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
-            padding: 20px;
-            width: 30%;
-            margin: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-
-        .skill-item h2 {
+        .skill-card h2 {
             font-size: 1.5em;
             color: #f4e04d;
             margin-bottom: 10px;
         }
 
-        .skill-item p {
-            font-size: 1.1em;
+        .skill-card p {
             color: #fff;
+            font-size: 1.1em;
         }
 
-        /* Media queries for responsiveness */
+        /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
-            .skill-item {
-                width: 90%;
+            h1 {
+                font-size: 2.5em;
             }
         }
     </style>
@@ -117,26 +128,36 @@
 
     <div class="container">
         <h1>My Skills</h1>
-        <div class="skills-list">
-            <div class="skill-item">
+        <div class="skills-grid">
+            <!-- Skill 1 -->
+            <div class="skill-card">
+                <img src="https://img.icons8.com/color/96/000000/sql.png" alt="SQL Icon">
                 <h2>SQL</h2>
-                <p>Data querying, manipulation, JOINs, and complex queries for analytics.</p>
+                <p>Advanced querying, data manipulation, joins, and performance optimization.</p>
             </div>
-            <div class="skill-item">
+            <!-- Skill 2 -->
+            <div class="skill-card">
+                <img src="https://img.icons8.com/color/96/000000/python.png" alt="Python Icon">
                 <h2>Python</h2>
-                <p>Data analysis with Pandas, NumPy, and Matplotlib for visual insights.</p>
+                <p>Data analysis with Pandas, NumPy, and visualization with Matplotlib.</p>
             </div>
-            <div class="skill-item">
+            <!-- Skill 3 -->
+            <div class="skill-card">
+                <img src="https://img.icons8.com/color/96/000000/power-bi.png" alt="Power BI Icon">
                 <h2>Power BI</h2>
-                <p>Interactive dashboard creation, data modeling, and DAX expressions.</p>
+                <p>Dashboard creation, data modeling, and reporting using DAX and Power Query.</p>
             </div>
-            <div class="skill-item">
+            <!-- Skill 4 -->
+            <div class="skill-card">
+                <img src="https://img.icons8.com/color/96/000000/ms-excel.png" alt="Excel Icon">
                 <h2>Excel</h2>
-                <p>Pivot tables, advanced formulas, VLOOKUP, data validation, and automation.</p>
+                <p>Pivot tables, advanced formulas, VLOOKUP, and data analysis automation.</p>
             </div>
-            <div class="skill-item">
+            <!-- Skill 5 -->
+            <div class="skill-card">
+                <img src="https://img.icons8.com/color/96/000000/data-configuration.png" alt="Data Analysis Icon">
                 <h2>Data Analysis</h2>
-                <p>Exploratory data analysis, data cleaning, and generating business insights.</p>
+                <p>Exploratory data analysis, cleaning, and deriving actionable insights.</p>
             </div>
         </div>
     </div>
