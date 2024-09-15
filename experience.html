@@ -4,102 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Experience - Amirudaullah</title>
+    <!-- Google Fonts for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            background-image: url('https://images.unsplash.com/photo-1542281286-9e0a16bb7366');
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1534620907745-4e43dedb29f2');
             background-size: cover;
             background-position: center;
+            color: white;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Dark gradient overlay */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+            z-index: 0;
         }
         nav {
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            z-index: 1000;
-        }
-        nav ul {
-            list-style: none;
             display: flex;
             justify-content: center;
-            padding: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            width: 100%;
         }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #f4e04d;
+        nav a {
+            color: white;
             text-decoration: none;
+            margin: 0 15px;
             font-size: 1.2em;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
-        nav ul li a:hover {
-            color: #fff;
+        nav a:hover {
+            color: #f4e04d;
         }
         .container {
-            background-color: rgba(0, 0, 0, 0.75);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
             text-align: center;
-            max-width: 900px;
-            margin-top: 100px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            z-index: 1;
+            padding: 20px;
         }
         h2 {
-            font-size: 3em;
-            margin-bottom: 20px;
+            font-size: 3.5em;
             color: #f4e04d;
             text-shadow: 2px 2px 4px #000;
+            margin-bottom: 40px;
         }
         .experience-item {
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             margin-bottom: 20px;
-            padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .experience-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 12px 24px rgba(255, 255, 255, 0.3);
         }
         h3 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
+            font-size: 2em;
             color: #f4e04d;
         }
         p {
-            font-size: 1.1em;
-            line-height: 1.6;
+            font-size: 1.2em;
             color: #f4f4f4;
+        }
+        .experience-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
     <div class="container">
         <h2>Professional Experience</h2>
 
-        <!-- Experience Section -->
+        <!-- Experience Section with Icons -->
         <div class="experience-item">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/engineering.png" alt="BT Icon" class="experience-icon">
             <h3>Order Management Professional - British Telecom</h3>
             <p>Kolkata | 2022 – Present</p>
             <p>Developed a software update that reduced system errors by 30%, improving customer satisfaction by 20%.</p>
@@ -107,6 +113,7 @@
         </div>
 
         <div class="experience-item">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/customer-support.png" alt="IBM Icon" class="experience-icon">
             <h3>Senior Associate - IBM Daksh</h3>
             <p>Kolkata | March 2017 – January 2018</p>
             <p>Resolved customer complaints through root cause analysis, achieving a 90% satisfaction rate.</p>
@@ -114,6 +121,7 @@
         </div>
 
         <div class="experience-item">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/headset.png" alt="Wipro Icon" class="experience-icon">
             <h3>Senior Associate - Wipro</h3>
             <p>Kolkata | March 2016 – October 2016</p>
             <p>Resolved escalated issues with a focus on prompt resolutions, improving customer retention by 15%.</p>
@@ -121,6 +129,7 @@
         </div>
 
         <div class="experience-item">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/invoice.png" alt="Aegis Icon" class="experience-icon">
             <h3>Associate - Aegis</h3>
             <p>Kolkata | May 2016 – February 2016</p>
             <p>Processed invoices for accuracy, ensuring compliance with company policies.</p>
