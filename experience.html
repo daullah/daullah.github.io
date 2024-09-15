@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Experience - Amirudaullah</title>
-    <!-- Google Fonts for modern look -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -14,14 +13,13 @@
             background-image: url('https://images.unsplash.com/photo-1534620907745-4e43dedb29f2');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed; /* Make the background image fixed */
             color: white;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            min-height: 100vh;
             position: relative;
             overflow-x: hidden;
         }
+
         /* Dark gradient overlay */
         body::before {
             content: '';
@@ -30,9 +28,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
             z-index: 0;
         }
+
         nav {
             display: flex;
             justify-content: center;
@@ -43,6 +42,7 @@
             width: 100%;
             z-index: 10;
         }
+
         nav a {
             color: white;
             text-decoration: none;
@@ -50,15 +50,19 @@
             font-size: 1.2em;
             transition: color 0.3s ease;
         }
+
         nav a:hover {
             color: #f4e04d;
         }
+
         .container {
             z-index: 1;
             padding-top: 120px;
             width: 80%;
             margin: 0 auto;
+            position: relative;
         }
+
         h2 {
             font-size: 3.5em;
             color: #f4e04d;
@@ -66,12 +70,14 @@
             text-align: center;
             margin-bottom: 40px;
         }
+
         .timeline {
             position: relative;
             margin: 0;
             padding: 20px 0;
             list-style: none;
         }
+
         .timeline::before {
             content: '';
             position: absolute;
@@ -82,20 +88,24 @@
             background: #f4e04d;
             transform: translateX(-50%);
         }
+
         .timeline-item {
             position: relative;
             width: 50%;
             padding: 20px;
             box-sizing: border-box;
         }
+
         .timeline-item-left {
             left: 0;
             text-align: right;
         }
+
         .timeline-item-right {
             left: 50%;
             text-align: left;
         }
+
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -106,32 +116,29 @@
             background: #f4e04d;
             border-radius: 50%;
             z-index: 10;
-            transition: transform 0.3s ease;
         }
+
         .timeline-item-right::before {
             left: -10px;
         }
-        .timeline-item:hover::before {
-            transform: scale(1.2);
-        }
+
         .experience-content {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background behind text */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
         }
-        .experience-content:hover {
-            transform: translateY(-10px);
-        }
+
         h3 {
             font-size: 1.8em;
             color: #f4e04d;
         }
+
         p {
             font-size: 1.1em;
             color: #f4f4f4;
         }
+
         .company-logo {
             width: 50px;
             height: auto;
@@ -151,9 +158,7 @@
     <div class="container">
         <h2>Professional Experience</h2>
 
-        <!-- Dynamic Timeline Section -->
         <ul class="timeline">
-            <!-- British Telecom Experience -->
             <li class="timeline-item timeline-item-left">
                 <div class="experience-content">
                     <img src="https://upload.wikimedia.org/wikipedia/en/4/48/British_Telecom_logo.svg" alt="British Telecom Logo" class="company-logo">
@@ -164,7 +169,6 @@
                 </div>
             </li>
 
-            <!-- IBM Daksh Experience -->
             <li class="timeline-item timeline-item-right">
                 <div class="experience-content">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/800px-IBM_logo.svg.png" alt="IBM Logo" class="company-logo">
@@ -175,7 +179,6 @@
                 </div>
             </li>
 
-            <!-- Wipro Experience -->
             <li class="timeline-item timeline-item-left">
                 <div class="experience-content">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Wipro_Primary_Logo_Color_RGB.svg/1280px-Wipro_Primary_Logo_Color_RGB.svg.png" alt="Wipro Logo" class="company-logo">
@@ -186,7 +189,6 @@
                 </div>
             </li>
 
-            <!-- Aegis Experience -->
             <li class="timeline-item timeline-item-right">
                 <div class="experience-content">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Aegis_Logo.svg" alt="Aegis Logo" class="company-logo">
