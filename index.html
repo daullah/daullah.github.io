@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amirudaullah's Portfolio</title>
-    <!-- Google Font for a more modern look -->
+    <!-- Google Font for modern, professional look -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Roboto', sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6');
+            background-image: url('https://images.unsplash.com/photo-1518779578993-ec3579fee39d');
             background-size: cover;
             background-position: center;
-            position: relative;
-            height: 100vh;
             color: white;
-            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        /* Adding a gradient overlay for better text visibility */
+        /* Dark gradient overlay */
         body::before {
             content: '';
             position: absolute;
@@ -27,17 +28,17 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
             z-index: 0;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             position: sticky;
             top: 0;
-            z-index: 10; /* Ensures nav stays on top of overlay */
+            z-index: 10;
         }
         nav a {
             color: white;
@@ -51,9 +52,7 @@
         }
         .content {
             text-align: center;
-            position: relative;
-            z-index: 1; /* Ensures text is on top of overlay */
-            margin-top: 120px;
+            z-index: 1;
         }
         h1 {
             font-size: 4.5em;
@@ -98,7 +97,7 @@
     </nav>
     <div class="content">
         <h1>Amirudaullah's Portfolio</h1>
-        <p>Welcome to my professional journey!</p>
+        <p>Your gateway to my journey as a data analyst and problem solver.</p>
         <a class="cta" href="about.html">Explore My Work</a>
     </div>
 </body>
