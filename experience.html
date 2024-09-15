@@ -71,6 +71,7 @@
             margin-bottom: 40px;
         }
 
+        /* Timeline structure */
         .timeline {
             position: relative;
             margin: 0;
@@ -107,19 +108,17 @@
         }
 
         .timeline-item::before {
-            content: '';
+            content: '★'; /* Icon as timeline marker */
             position: absolute;
             top: 20px;
             left: calc(100% - 10px);
-            width: 20px;
-            height: 20px;
-            background: #f4e04d;
-            border-radius: 50%;
+            font-size: 1.5em;
+            color: #f4e04d;
             z-index: 10;
         }
 
         .timeline-item-right::before {
-            left: -10px;
+            left: -20px;
         }
 
         .experience-content {
@@ -127,6 +126,11 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .experience-content:hover {
+            transform: scale(1.05);
         }
 
         h3 {
@@ -143,6 +147,27 @@
             width: 50px;
             height: auto;
             margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .company-logo:hover {
+            transform: rotate(360deg);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .timeline-item {
+                width: 100%;
+                text-align: center;
+            }
+
+            .timeline-item-left, .timeline-item-right {
+                left: 0;
+            }
+
+            .timeline-item::before, .timeline-item-right::before {
+                left: calc(50% - 10px);
+            }
         }
     </style>
 </head>
