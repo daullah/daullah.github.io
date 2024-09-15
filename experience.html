@@ -103,21 +103,24 @@
             left: 50%;
         }
 
-        .timeline-item::before {
-            content: ' ';
+        .timeline-date {
             position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            background-color: #f4e04d;
-            border: 4px solid #fff;
+            width: 120px;
+            background: #f4e04d;
+            color: #333;
+            padding: 5px;
+            font-size: 1.1em;
+            text-align: center;
+            border-radius: 5px;
             top: 15px;
-            border-radius: 50%;
-            z-index: 1;
         }
 
-        .timeline-item-right::before {
-            left: -16px;
+        .timeline-item-left .timeline-date {
+            right: -160px;
+        }
+
+        .timeline-item-right .timeline-date {
+            left: -160px;
         }
 
         .experience-content {
@@ -132,15 +135,33 @@
             transform: scale(1.05);
         }
 
+        /* New role-company design */
+        .role-company {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
         .company-logo {
-            width: 50px;
+            width: 60px;
             height: auto;
-            margin-bottom: 15px;
+            margin-right: 15px;
             transition: transform 0.3s ease;
         }
 
         .company-logo:hover {
             transform: rotate(360deg);
+        }
+
+        h3 {
+            font-size: 1.8em;
+            color: #f4e04d;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #f4f4f4;
         }
 
         /* Adjustments for smaller screens */
@@ -157,6 +178,13 @@
 
             .timeline::after {
                 left: 50%;
+            }
+
+            .timeline-item-left .timeline-date,
+            .timeline-item-right .timeline-date {
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     </style>
@@ -175,40 +203,48 @@
 
         <div class="timeline">
             <div class="timeline-item timeline-item-left">
+                <div class="timeline-date">2022 – Present</div>
                 <div class="experience-content">
-                    <img src="bt-logo.png" alt="British Telecom Logo" class="company-logo">
-                    <h3>Order Management Professional - British Telecom</h3>
-                    <p>Kolkata | 2022 – Present</p>
+                    <div class="role-company">
+                        <img src="bt-logo.png" alt="British Telecom Logo" class="company-logo">
+                        <h3>Order Management Professional - British Telecom</h3>
+                    </div>
                     <p>Developed a software update that reduced system errors by 30%, improving customer satisfaction by 20%.</p>
                     <p>Led a cross-functional team to improve the order management process, reducing errors by 15%.</p>
                 </div>
             </div>
 
             <div class="timeline-item timeline-item-right">
+                <div class="timeline-date">2017 – 2018</div>
                 <div class="experience-content">
-                    <img src="ibm-logo.svg" alt="IBM Logo" class="company-logo">
-                    <h3>Senior Associate - IBM Daksh</h3>
-                    <p>Kolkata | March 2017 – January 2018</p>
+                    <div class="role-company">
+                        <img src="ibm-logo.svg" alt="IBM Logo" class="company-logo">
+                        <h3>Senior Associate - IBM Daksh</h3>
+                    </div>
                     <p>Resolved customer complaints through root cause analysis, achieving a 90% satisfaction rate.</p>
                     <p>Collaborated with teams to reduce complaint resolution times by 25%.</p>
                 </div>
             </div>
 
             <div class="timeline-item timeline-item-left">
+                <div class="timeline-date">2016 – 2016</div>
                 <div class="experience-content">
-                    <img src="wipro-logo.svg" alt="Wipro Logo" class="company-logo">
-                    <h3>Senior Associate - Wipro</h3>
-                    <p>Kolkata | March 2016 – October 2016</p>
+                    <div class="role-company">
+                        <img src="wipro-logo.svg" alt="Wipro Logo" class="company-logo">
+                        <h3>Senior Associate - Wipro</h3>
+                    </div>
                     <p>Resolved escalated issues with a focus on prompt resolutions, improving customer retention by 15%.</p>
                     <p>Documented support interactions, resulting in a 30% improvement in follow-up times.</p>
                 </div>
             </div>
 
             <div class="timeline-item timeline-item-right">
+                <div class="timeline-date">2016 – 2016</div>
                 <div class="experience-content">
-                    <img src="aegis-logo.png" alt="Aegis Logo" class="company-logo">
-                    <h3>Associate - Aegis</h3>
-                    <p>Kolkata | May 2016 – February 2016</p>
+                    <div class="role-company">
+                        <img src="aegis-logo.png" alt="Aegis Logo" class="company-logo">
+                        <h3>Associate - Aegis</h3>
+                    </div>
                     <p>Processed invoices for accuracy, ensuring compliance with company policies.</p>
                     <p>Led a process improvement initiative, which reduced invoice discrepancies by 10%.</p>
                 </div>
