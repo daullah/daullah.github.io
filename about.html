@@ -9,8 +9,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            background-image: url('https://images.unsplash.com/photo-1485768071412-1a6c8b884e6d');
+            background-image: url('https://images.unsplash.com/photo-1483058712412-4245e9b90334');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -47,24 +46,46 @@
         }
         .container {
             background-color: rgba(0, 0, 0, 0.75);
-            padding: 40px;
-            border-radius: 10px;
+            padding: 50px;
+            border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
             text-align: center;
             max-width: 900px;
-            margin-top: 80px;
+            margin-top: 100px;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         h2 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 20px;
             color: #f4e04d;
-            text-shadow: 2px 2px 4px #000;
+            text-shadow: 3px 3px 5px #000;
         }
         p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             line-height: 1.8;
             text-align: justify;
+        }
+        .highlight {
+            color: #f4e04d;
+            font-weight: bold;
+        }
+        .cta {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background-color: #f4e04d;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .cta:hover {
+            background-color: #333;
+            color: #f4e04d;
+        }
+        .skills-highlight {
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -78,9 +99,15 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+
     <div class="container">
         <h2>About Me</h2>
-        <p>Results-driven Order Management Analyst with over 2 years of experience at British Telecom. Demonstrated expertise in optimizing order fulfillment processes ensuring accurate order capture and enhancing customer satisfaction. Proficient in utilizing order management systems, collaborating with cross-functional teams, and leveraging data-driven insights to improve the customer order journey. Adept at process improvement, data analysis, and problem-solving to drive operational efficiency.</p>
+        <p>Hello! I'm <span class="highlight">Amirudaullah</span>, a results-driven Order Management Analyst with over 2 years of experience at British Telecom. I have a passion for <span class="highlight">data analysis</span> and continuous improvement in customer satisfaction. I'm proficient in <span class="highlight">SQL</span>, <span class="highlight">Power BI</span>, and <span class="highlight">Python</span>, and I’m constantly expanding my skills to drive operational efficiency. I enjoy collaborating with cross-functional teams to deliver impactful solutions.</p>
+        <div class="skills-highlight">
+            <h3>Key Skills</h3>
+            <p>SQL, Power BI, Python, Data Analysis, Process Improvement</p>
+        </div>
+        <a href="resume.pdf" class="cta">Download My Resume</a>
     </div>
 </body>
 </html>
