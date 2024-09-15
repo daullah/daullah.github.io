@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Experience - Amirudaullah</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            font-family: 'Montserrat', sans-serif; /* Clean, professional font */
+            background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -19,6 +20,7 @@
             position: relative;
         }
 
+        /* Dark gradient overlay */
         body::before {
             content: '';
             position: absolute;
@@ -26,40 +28,49 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.7); /* Dark overlay */
             z-index: 0;
         }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent background */
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 10;
+            text-align: center;
         }
 
-        .navbar a {
-            color: #fff;
+        nav a {
+            color: #f4e04d; /* Gold color to stand out */
             text-decoration: none;
-            padding: 10px;
+            margin: 0 20px;
+            font-size: 1.2em;
+            font-weight: 700;
+            transition: color 0.3s ease;
         }
 
-        .navbar a:hover {
-            text-decoration: underline;
+        nav a:hover {
+            color: #fff; /* White on hover */
         }
 
         .container {
             width: 80%;
-            margin: auto;
+            margin: 0 auto;
             position: relative;
-            padding-top: 100px;
+            padding-top: 120px;
         }
 
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            color: #f4e04d;
+            margin-bottom: 20px;
+        }
+
+        /* Timeline styling */
         .timeline {
             position: relative;
             max-width: 900px;
@@ -70,7 +81,7 @@
             content: '';
             position: absolute;
             width: 2px;
-            background-color: #f4e04d;
+            background-color: #f4e04d; /* Bright color for contrast */
             top: 0;
             bottom: 0;
             left: 50%;
@@ -84,6 +95,7 @@
             box-sizing: border-box;
         }
 
+        /* Styling for left and right items */
         .timeline-item-left {
             left: 0;
             border-right: 5px solid #f4e04d;
@@ -96,6 +108,7 @@
         .timeline-date {
             position: absolute;
             width: 120px;
+            color: #333;
             background: #f4e04d;
             padding: 5px 0;
             text-align: center;
@@ -125,6 +138,7 @@
             font-size: 1.2em;
             font-weight: bold;
             margin-bottom: 10px;
+            color: #f4e04d; /* Gold color to pop against dark backgrounds */
         }
 
         .company-logo {
@@ -135,6 +149,7 @@
 
         p {
             margin: 5px 0;
+            color: #fff; /* Light font color for readability */
         }
 
         @media (max-width: 768px) {
@@ -153,17 +168,58 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <a href="home.html">Home</a>
+    <!-- Navigation bar -->
+    <nav>
+        <a href="index.html">Home</a>
         <a href="about.html">About Me</a>
         <a href="projects.html">Projects</a>
         <a href="skills.html">Skills</a>
         <a href="contact.html">Contact</a>
-    </div>
+    </nav>
+
     <div class="container">
         <h1>Professional Experience</h1>
         <div class="timeline">
-            <!-- Timeline items here -->
+            <!-- British Telecom Experience -->
+            <div class="timeline-item timeline-item-right">
+                <div class="timeline-date">Apr 2022 - Present</div>
+                <div class="experience-content">
+                    <img src="bt-logo.png" alt="BT Logo" class="company-logo">
+                    <span class="role-company">Order Management Professional at British Telecom</span>
+                    <p>Developed a software update that reduced system errors by 30%, improving customer satisfaction by 20%.</p>
+                    <p>Led a cross-functional team to improve the order management process, reducing errors by 15%.</p>
+                </div>
+            </div>
+            <!-- IBM Daksh Experience -->
+            <div class="timeline-item timeline-item-left">
+                <div class="timeline-date">Mar 2017 – Jan 2018</div>
+                <div class="experience-content">
+                    <img src="ibm-logo.svg" alt="IBM Logo" class="company-logo">
+                    <span class="role-company">Senior Associate at IBM Daksh</span>
+                    <p>Resolved customer complaints through root cause analysis, achieving a 90% satisfaction rate.</p>
+                    <p>Collaborated with teams to reduce complaint resolution times by 25%.</p>
+                </div>
+            </div>
+            <!-- Wipro Experience -->
+            <div class="timeline-item timeline-item-right">
+                <div class="timeline-date">Mar 2016 – Oct 2016</div>
+                <div class="experience-content">
+                    <img src="wipro-logo.svg" alt="Wipro Logo" class="company-logo">
+                    <span class="role-company">Senior Associate at Wipro</span>
+                    <p>Resolved escalated issues with a focus on prompt resolutions, improving customer retention by 15%.</p>
+                    <p>Documented support interactions, resulting in a 30% improvement in follow-up times.</p>
+                </div>
+            </div>
+            <!-- Aegis Experience -->
+            <div class="timeline-item timeline-item-left">
+                <div class="timeline-date">May 2015 – Feb 2016</div>
+                <div class="experience-content">
+                    <img src="aegis-logo.png" alt="Aegis Logo" class="company-logo">
+                    <span class="role-company">Associate at Aegis</span>
+                    <p>Processed invoices for accuracy, ensuring compliance with company policies.</p>
+                    <p>Led a process improvement initiative, which reduced invoice discrepancies by 10%.</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
