@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Roboto', sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1518779578993-ec3579fee39d');
+            background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0');
             background-size: cover;
             background-position: center;
             color: white;
@@ -19,6 +19,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            overflow: hidden;
         }
         /* Dark gradient overlay */
         body::before {
@@ -26,18 +28,19 @@
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
             z-index: 0;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            position: sticky;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 20px 0;
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 10;
         }
         nav a {
@@ -45,7 +48,7 @@
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2em;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
         nav a:hover {
             color: #f4e04d;
@@ -53,6 +56,7 @@
         .content {
             text-align: center;
             z-index: 1;
+            padding: 0 20px;
         }
         h1 {
             font-size: 4.5em;
@@ -95,6 +99,7 @@
         <a href="skills.html">Skills</a>
         <a href="contact.html">Contact</a>
     </nav>
+    
     <div class="content">
         <h1>Amirudaullah's Portfolio</h1>
         <p>Your gateway to my journey as a data analyst and problem solver.</p>
