@@ -3,107 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amirudaullah's Portfolio</title>
-    <!-- Google Font for modern, professional look -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        /* Dark gradient overlay */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-            z-index: 0;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.85);
-            padding: 20px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 10;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #f4e04d;
-        }
-        .content {
-            text-align: center;
-            z-index: 1;
-            padding: 0 20px;
-        }
-        h1 {
-            font-size: 4.5em;
-            text-shadow: 2px 2px 8px #000;
-            animation: fadeIn 2s ease;
-        }
-        p {
-            font-size: 1.5em;
-            text-shadow: 1px 1px 4px #000;
-            animation: fadeIn 2.5s ease;
-        }
-        .cta {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 36px;
-            background-color: #f4e04d;
-            color: #333;
-            font-size: 1.3em;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .cta:hover {
-            background-color: #333;
-            color: #f4e04d;
-            transform: scale(1.05);
-        }
-        /* Keyframes for smooth fade-in animation */
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <title>Home - Amirudaullah</title>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <a href="about.html">About Me</a>
-        <a href="experience.html">Professional Experience</a>
-        <a href="projects.html">Projects</a>
-        <a href="skills.html">Skills</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    
-    <div class="content">
-        <h1>Amirudaullah's Portfolio</h1>
-        <p>Your gateway to my journey as a data analyst and problem solver.</p>
-        <a class="cta" href="about.html">Explore My Work</a>
-    </div>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome to My Portfolio</h1>
+        <p>This is the homepage of my professional portfolio. Explore my projects, skills, and professional background!</p>
+    </main>
+
+    <footer>
+        <p>© 2024 Amirudaullah. All rights reserved.</p>
+    </footer>
 </body>
 </html>
