@@ -4,110 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Amirudaullah</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1483058712412-4245e9b90334');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: white;
-        }
-        nav {
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            z-index: 1000;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #f4e04d;
-            text-decoration: none;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #fff;
-        }
-        .container {
-            background-color: rgba(0, 0, 0, 0.75);
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            max-width: 900px;
-            margin-top: 100px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        h2 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            color: #f4e04d;
-            text-shadow: 3px 3px 5px #000;
-        }
-        p {
-            font-size: 1.3em;
-            line-height: 1.8;
-            text-align: justify;
-        }
-        .highlight {
-            color: #f4e04d;
-            font-weight: bold;
-        }
-        .cta {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 24px;
-            background-color: #f4e04d;
-            color: #333;
-            text-decoration: none;
-            font-size: 1.2em;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .cta:hover {
-            background-color: #333;
-            color: #f4e04d;
-        }
-        .skills-highlight {
-            margin-top: 30px;
-        }
-    </style>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-    <div class="container">
-        <h2>About Me</h2>
-        <p>Hello! I'm <span class="highlight">Amirudaullah</span>, a results-driven Order Management Analyst with over 2 years of experience at British Telecom. I have a passion for <span class="highlight">data analysis</span> and continuous improvement in customer satisfaction. I'm proficient in <span class="highlight">SQL</span>, <span class="highlight">Power BI</span>, and <span class="highlight">Python</span>, and I’m constantly expanding my skills to drive operational efficiency. I enjoy collaborating with cross-functional teams to deliver impactful solutions.</p>
-        <div class="skills-highlight">
-            <h3>Key Skills</h3>
-            <p>SQL, Power BI, Python, Data Analysis, Process Improvement</p>
-        </div>
-        <a href="resume.pdf" class="cta">Download My Resume</a>
-    </div>
+    <main>
+        <section>
+            <h1>About Me</h1>
+            <p>I am an aspiring data analyst with expertise in order management, data analysis, and process optimization. My background in telecom and IT, combined with my passion for analyzing data, has helped me develop a strong foundation for leveraging data to drive business decisions.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Amirudaullah. All rights reserved.</p>
+    </footer>
 </body>
 </html>
