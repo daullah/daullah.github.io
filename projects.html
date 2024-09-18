@@ -3,113 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Amirudaullah</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #f4e04d;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 100px auto 0 auto;
-            padding: 40px 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-        h2 {
-            text-align: center;
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: #f4e04d;
-            text-shadow: 2px 2px 8px #000;
-        }
-        .projects-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .project-item {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            width: 300px;
-            margin: 20px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .project-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-        }
-        .project-title {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: #f4e04d;
-        }
-        .project-description {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #f4f4f4;
-        }
-    </style>
+    <title>Projects - Daullah</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="experience.html">Professional Experience</a>
-        <a href="skills.html">Skills</a>
-        <a href="contact.html">Contact</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+        </ul>
     </nav>
-    <div class="container">
-        <h2>Projects</h2>
-        <div class="projects-list">
-            <div class="project-item">
-                <h3 class="project-title">Power BI Dataset Visualization</h3>
-                <p class="project-description">Created interactive dashboards by importing and transforming datasets, applying data modeling, and generating visual insights to enhance business decisions.</p>
-            </div>
-            <div class="project-item">
-                <h3 class="project-title">Data Cleaning for Myntra Catalogue</h3>
-                <p class="project-description">Conducted thorough data quality assessments, handled missing values, and corrected data types to improve the accuracy of the Myntra product catalogue.</p>
-            </div>
-            <div class="project-item">
-                <h3 class="project-title">SQL E-Commerce Case Study</h3>
-                <p class="project-description">Designed SQL queries and performed complex aggregations and joins to derive actionable insights from large-scale e-commerce datasets.</p>
-            </div>
-            <div class="project-item">
-                <h3 class="project-title">Healthcare SQL Analytics</h3>
-                <p class="project-description">Analyzed patient records and health outcomes data using SQL to generate insights for improving healthcare strategies and patient care.</p>
-            </div>
-            <div class="project-item">
-                <h3 class="project-title">Python Sales Data Analysis</h3>
-                <p class="project-description">Analyzed sales data using Pandas, generating visualizations with Matplotlib and Seaborn to explore sales trends and insights.</p>
-            </div>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h1>My Projects</h1>
+        
+        <!-- Project 1 -->
+        <div class="project">
+            <h2>Employee Data Dashboard</h2>
+            <p><strong>Tools/Technologies:</strong> Power BI, SQL</p>
+            <ul>
+                <li>Created a Power BI dashboard to visualize employee data, reducing manual report generation time by 50%.</li>
+                <li>Analyzed a dataset of over 10,000 employees to identify talent gaps, resulting in a 30% improvement in workforce planning.</li>
+                <li>Automated data collection and visualization, improving reporting accuracy by 25%.</li>
+            </ul>
         </div>
-    </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <h2>Sales Performance Analyzer</h2>
+            <p><strong>Tools/Technologies:</strong> Python, SQL</p>
+            <ul>
+                <li>Developed a Python-based tool to analyze sales performance, improving decision-making by 20%.</li>
+                <li>Integrated SQL queries to pull data from multiple sources, streamlining data access by 30%.</li>
+                <li>Automated monthly reporting processes, saving 10+ hours of manual work.</li>
+            </ul>
+        </div>
+        
+        <!-- Add more projects as needed -->
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Daullah</p>
+    </footer>
 </body>
 </html>
