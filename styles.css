@@ -110,3 +110,33 @@ footer {
         font-size: 1em;
     }
 }
+
+/* Specific Styles for Projects and Skills Pages */
+#projects, #skills {
+    max-width: 900px;
+    margin: 80px auto; /* Adjust for the fixed header */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#projects h1, #skills h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 32px;
+    color: #333;
+}
+
+#projects h2, #skills h2 {
+    color: #444;
+    font-size: 24px;
+}
+
+#projects p, #projects ul, #skills p, #skills ul {
+    color: #555;
+    font-size: 16px;
+}
+
+.project, .skill-category {
+    margin-bottom: 30px;
+}
