@@ -3,163 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills - Amirudaullah</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-image: url('https://cdn.pixabay.com/photo/2018/01/14/23/12/network-3080997_1280.jpg'); /* Modern, tech-oriented background */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #fff;
-            min-height: 100vh;
-            position: relative;
-        }
-
-        /* Dark gradient overlay */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7); /* Dark overlay */
-            z-index: 0;
-        }
-
-        /* Navigation Bar */
-        nav {
-            background-color: rgba(0, 0, 0, 0.85);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 10;
-            text-align: center;
-        }
-
-        nav a {
-            color: #f4e04d; /* Gold */
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.2em;
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #fff;
-        }
-
-        .container {
-            width: 85%;
-            margin: 0 auto;
-            position: relative;
-            padding-top: 120px;
-            z-index: 1;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            color: #f4e04d;
-            margin-bottom: 40px;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease, background 0.3s ease;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .skill-card img {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 20px;
-        }
-
-        .skill-card h2 {
-            font-size: 1.5em;
-            color: #f4e04d;
-            margin-bottom: 10px;
-        }
-
-        .skill-card p {
-            color: #fff;
-            font-size: 1.1em;
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-        }
-    </style>
+    <title>Skills - Daullah</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation bar -->
+    <!-- Navigation Bar -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="projects.html">Projects</a>
-        <a href="experience.html">Experience</a>
-        <a href="contact.html">Contact</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+        </ul>
     </nav>
 
-    <div class="container">
+    <!-- Skills Section -->
+    <section id="skills">
         <h1>My Skills</h1>
-        <div class="skills-grid">
-            <!-- Skill 1 -->
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/96/000000/sql.png" alt="SQL Icon">
-                <h2>SQL</h2>
-                <p>Advanced querying, data manipulation, joins, and performance optimization.</p>
-            </div>
-            <!-- Skill 2 -->
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/96/000000/python.png" alt="Python Icon">
-                <h2>Python</h2>
-                <p>Data analysis with Pandas, NumPy, and visualization with Matplotlib.</p>
-            </div>
-            <!-- Skill 3 -->
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/96/000000/power-bi.png" alt="Power BI Icon">
-                <h2>Power BI</h2>
-                <p>Dashboard creation, data modeling, and reporting using DAX and Power Query.</p>
-            </div>
-            <!-- Skill 4 -->
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/96/000000/ms-excel.png" alt="Excel Icon">
-                <h2>Excel</h2>
-                <p>Pivot tables, advanced formulas, VLOOKUP, and data analysis automation.</p>
-            </div>
-            <!-- Skill 5 -->
-            <div class="skill-card">
-                <img src="https://img.icons8.com/color/96/000000/data-configuration.png" alt="Data Analysis Icon">
-                <h2>Data Analysis</h2>
-                <p>Exploratory data analysis, cleaning, and deriving actionable insights.</p>
-            </div>
+        
+        <!-- Data Analysis Skills -->
+        <div class="skill-category">
+            <h2>Data Analysis</h2>
+            <ul>
+                <li>Proficient in SQL and Python for large dataset analysis, delivering actionable insights.</li>
+                <li>Created Power BI dashboards that improved decision-making by providing real-time analytics.</li>
+            </ul>
         </div>
-    </div>
+        
+        <!-- Programming Languages -->
+        <div class="skill-category">
+            <h2>Programming Languages</h2>
+            <ul>
+                <li>Python: Used for data manipulation, analysis, and automation.</li>
+                <li>SQL: Experienced in querying and managing complex databases.</li>
+            </ul>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="skill-category">
+            <h2>Tools & Technologies</h2>
+            <ul>
+                <li>Power BI: Built dashboards to track performance and visualize key metrics.</li>
+                <li>GitHub: Managed and version-controlled projects, contributing to team collaboration.</li>
+            </ul>
+        </div>
+        
+        <!-- Add more skills if needed -->
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Daullah</p>
+    </footer>
 </body>
 </html>
