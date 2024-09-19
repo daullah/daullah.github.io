@@ -95,6 +95,20 @@ main {
 .cta:hover {
     background-color: #555;
 }
+.about-section, .journey-section {
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 90%; /* Adjust width as needed */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px; /* Adds padding inside the container */
+    text-align: left; /* Aligns text to the left */
+}
+
+main {
+    padding-top: 100px; /* Adds space on top to avoid overlapping with the fixed header */
+}
 
 /* Featured Projects Section */
 .featured-projects {
