@@ -64,21 +64,30 @@ main {
     border-radius: 8px;
 }
 
-/* Hero Section */
+/* Hero Section Styling */
 .hero {
+    background: linear-gradient(135deg, #89CFF0, #E0FFFF);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
     text-align: center;
 }
 
-.hero h1 {
+.hero-content h1 {
     font-size: 3em;
     color: #333;
 }
 
-.hero p {
+.hero-content p {
     font-size: 1.2em;
     margin-top: 10px;
     color: #666;
 }
+
 
 .cta {
     display: inline-block;
