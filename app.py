@@ -12,30 +12,20 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Custom CSS styling (abbreviated for brevity: reuse from your original CSS mostly)
+# Custom CSS styling (add your full CSS styles from original code here)
 css = """
 <style>
-/* Your original CSS content here */
 * {margin: 0; padding: 0;}
 html, body, [data-testid="stAppViewContainer"] {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
 }
-/* (Include other CSS from original code block for animations, cards etc.) */
+/* Add additional CSS from your original styling here */
 </style>
 """
-
 st.markdown(css, unsafe_allow_html=True)
 
-# Purpose Statement
-st.markdown("""
-<div style='margin-bottom: 32px; padding: 20px 30px; background:rgba(102,126,234,0.1); border-radius:12px; border-left: 6px solid #764ba2;'>
-<h2 style="color: #667eea;">Portfolio & Demo Workspace</h2>
-<p style="font-size: 1.1em; color: #222;">Welcome! This interactive site is designed to showcase my skills in data analysis, QA, and automation with hands-on examples. Explore my experience, visualize analytics pipelines, or try out mini-demos below.</p>
-</div>
-""", unsafe_allow_html=True)
-
-# Header Section
+# Header Section (without purpose statement)
 st.markdown("""
 <div class="main-header">
     <h1>👨‍💼 Amirudaullah</h1>
@@ -123,20 +113,18 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Career Progression Section
+# Career Progression Section (Include full content from your original code)
 st.markdown("---")
 st.markdown("<h2>💼 Career Progression</h2>", unsafe_allow_html=True)
-# (Career timeline content from your original code here, truncated here for brevity)
+# Insert your career timeline content here 
 
-# Project Portfolio Section
+# Project Portfolio Section (Include full content from your original code)
 st.markdown("---")
 st.markdown("<h2>📂 Project Portfolio</h2>", unsafe_allow_html=True)
-# (Projects content from your original code here)
+# Insert your projects content here 
 
 # Interactive Demo: Sales Dashboard
 st.markdown("## 🎯 Demo: Interactive Sales Dashboard")
-
-# Sample Data
 np.random.seed(0)
 regions = ['North', 'South', 'East', 'West']
 months = pd.date_range('2024-01-01', periods=12, freq='M').strftime('%b')
@@ -154,17 +142,16 @@ if region != "All":
     df = data[data['Region'] == region]
 else:
     df = data
+
 df = df.iloc[month_range[0]-1 : month_range[1]]
 
 fig = px.bar(df, x='Month', y='Sales', title="Monthly Sales", color='Region' if region == "All" else None,
              color_discrete_sequence=px.colors.sequential.Blues)
-
 if show_trend:
     fig.add_scatter(x=df['Month'], y=df['Sales'], mode='lines', name='Trend', line=dict(color='#764ba2', width=3))
 
 st.plotly_chart(fig, use_container_width=True)
 
-# Show sample data table
 if st.checkbox("Show sample data from demo project", False):
     st.write(df.head())
 
@@ -195,5 +182,4 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown("<br><br>")
-
 st.markdown("<p style='text-align: center; color: white; opacity: 0.7; font-weight: 600;'>© 2024 Amirudaullah | Data Analyst & QA Specialist</p>", unsafe_allow_html=True)
