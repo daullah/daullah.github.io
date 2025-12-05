@@ -11,7 +11,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# --- COMPLETE CSS WITH ANIMATIONS AND RESPONSIVENESS ---
+# --- COMPLETE CSS WITH ENHANCED RESPONSIVENESS ---
 css = """
 <style>
 /* General Reset & Body Styling */
@@ -33,6 +33,8 @@ html, body, [data-testid="stAppViewContainer"] {
     border-radius: 10px;
     padding: 5px;
     gap: 5px;
+    overflow-x: auto; /* Allow horizontal scrolling for tabs on small screens */
+    flex-wrap: nowrap; /* Prevent tabs from wrapping to a new line */
 }
 .stTabs [data-baseweb="tab"] {
     border-radius: 8px;
@@ -40,6 +42,7 @@ html, body, [data-testid="stAppViewContainer"] {
     font-weight: 600;
     background-color: transparent;
     color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap; /* Prevent tab text from wrapping */
 }
 .stTabs [aria-selected="true"] {
     background-color: rgba(255, 255, 255, 0.2);
@@ -158,13 +161,33 @@ html, body, [data-testid="stAppViewContainer"] {
     transform: scale(1.05);
 }
 
-/* Mobile Responsiveness */
+/* --- ENHANCED MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
     .main-header h1 {
+        font-size: 2.2rem;
+    }
+    .main-header p {
+        font-size: 1rem;
+    }
+    .card, .org-item, .testimonial {
+        padding: 1rem 1.25rem;
+        margin-bottom: 1rem;
+    }
+    .metric-box {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    .metric-box h3 {
         font-size: 2rem;
     }
     .stColumns > div {
         padding: 0.25rem;
+    }
+    /* Adjust form elements for mobile */
+    .stTextInput > div > div > input,
+    .stSelectbox > div > div > select,
+    .stTextArea > div > div > textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
     }
 }
 </style>
@@ -211,6 +234,14 @@ with tabs[0]:
         st.markdown("""<div class="metric-box"><h3>💡</h3><p><b>Actionable Insights</b></p></div>""", unsafe_allow_html=True)
     with col4:
         st.markdown("""<div class="metric-box"><h3>🤝</h3><p><b>Collaboration</b></p></div>""", unsafe_allow_html=True)
+
+    # --- NEW: CALL TO ACTION ---
+    st.markdown("""
+    <div class="card" style="text-align: center; border-left: 5px solid #4CAF50; background-color: rgba(76, 175, 80, 0.1);">
+        <h3>🚀 Interested in collaborating?</h3>
+        <p>Let's discuss how my data analysis and QA skills can benefit your team. Check out my projects or get in touch!</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 # -------- Career Progression -------- #
 with tabs[1]:
@@ -392,7 +423,7 @@ with tabs[3]:
     with col3:
         st.markdown("<div class='badge'>📚 SQL for Data Analysis (In Progress)</div>", unsafe_allow_html=True)
         st.markdown("<div class='badge'>📚 Power BI Visualization (In Progress)</div>", unsafe_allow_html=True)
-        # -------- Interactive Demo -------- #
+# -------- Interactive Demo -------- #
 with tabs[4]:
     st.markdown("## 🎯 Demo: Interactive Sales Dashboard")
     np.random.seed(42)
@@ -425,17 +456,26 @@ with tabs[4]:
     if st.checkbox("Show sample data from demo project", False):
         st.write(df.head())
 
-# -------- Articles & Insights -------- #
+# -------- Articles & Insights (UPDATED) -------- #
 with tabs[5]:
     st.markdown("<h2>📝 Articles & Insights</h2>", unsafe_allow_html=True)
     st.markdown("A collection of my thoughts on data analytics, quality assurance, and industry trends.")
 
     with st.expander("Data Quality Best Practices in Healthcare Analytics"):
+        # --- ENHANCED: Full article content ---
         st.markdown("""
         <div class="card">
-        <p><b>Published on:</b> June 15, 2024 | <b>Platform:</b> Medium</p>
-        <p>In this article, I discuss critical importance of data quality in healthcare analytics. I cover topics such as data validation techniques, the impact of poor data on patient outcomes, and best practices for maintaining high data integrity standards...</p>
-        <a href="https://your-blog-link.com/article1" target="_blank" style="color: #fbbf24; font-weight: bold;">Read More →</a>
+        <h4>1. Establish Clear Data Governance Rules</h4>
+        <p>Before any data is even collected, it's crucial to define what "quality" means for your organization. This includes setting standards for data formats, entry protocols, and validation rules. For healthcare, this could mean standardizing patient ID formats or defining mandatory fields for new records.</p>
+        
+        <h4>2. Implement Automated Validation Checks</h4>
+        <p>Manual checks are prone to human error. Automated scripts can run continuously in the background, flagging inconsistencies, duplicates, or missing values as soon as data is entered. For example, a script can automatically check if a patient's age falls within a reasonable range or if a diagnostic code is valid.</p>
+
+        <h4>3. Regular Data Audits and Cleansing</h4>
+        <p>Schedule regular audits of your datasets. This involves profiling the data to understand its quality, identifying outliers, and cleansing inaccuracies. Tools like Python's Pandas library are excellent for this, allowing you to efficiently find and correct errors across thousands of records.</p>
+
+        <h4>4. Foster a Culture of Data Quality</h4>
+        <p>Ultimately, data quality is everyone's responsibility. Training staff on the importance of data accuracy and providing them with the right tools and feedback loops can create a culture where quality is prioritized at every step of the data lifecycle.</p>
         </div>
         """, unsafe_allow_html=True)
 
