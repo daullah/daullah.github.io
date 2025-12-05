@@ -423,7 +423,7 @@ with tabs[3]:
     with col3:
         st.markdown("<div class='badge'>📚 SQL for Data Analysis (In Progress)</div>", unsafe_allow_html=True)
         st.markdown("<div class='badge'>📚 Power BI Visualization (In Progress)</div>", unsafe_allow_html=True)
-# -------- Interactive Demo -------- #
+        # -------- Interactive Demo -------- #
 with tabs[4]:
     st.markdown("## 🎯 Demo: Interactive Sales Dashboard")
     np.random.seed(42)
