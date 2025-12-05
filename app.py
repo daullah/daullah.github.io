@@ -444,4 +444,22 @@ with tabs[5]:
     st.markdown("<h2>📝 Articles & Insights</h2>", unsafe_allow_html=True)
     st.markdown("A collection of my thoughts on data analytics, quality assurance, and industry trends.")
 
-    with st.expander("Data Quality Be
+    with st.expander("Data Quality Best Practices in Healthcare Analytics"):
+        st.markdown("""
+        <div class="card">
+        <p><b>Published on:</b> [Date] | <b>Platform:</b> [e.g., LinkedIn, Medium]</p>
+        <p>In this article, I discuss the critical importance of data quality in healthcare analytics. I cover topics such as data validation techniques, the impact of poor data on patient outcomes, and best practices for maintaining high data integrity standards...</p>
+        <a href="https://your-blog-link.com/article1" target="_blank" style="color: #fbbf24; font-weight: bold;">Read More →</a>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with st.expander("How to Automate QA Checks with Python and Pandas"):
+        st.markdown("""
+        <div class="card">
+        <p><b>Published on:</b> [Date] | <b>Platform:</b> [e.g., Personal Blog, GitHub]</p>
+        <p>This post provides a practical, step-by-step guide to automating repetitive Quality Assurance checks using Python's Pandas library. It includes code snippets for validating data types, checking for null values, and identifying outliers, saving analysts countless hours...</p>
+        <a href="https://your-blog-link.com/article2" target="_blank" style="color: #fbbf24; font-weight: bold;">Read More →</a>
+        </div>
+        """, unsafe_allow_html=True)
+        
+# -------- Testimon
