@@ -575,4 +575,5 @@ with tabs[7]:
         """, unsafe_allow_html=True)
 
     st.markdown("<br><br>")
-    st.markdown("<p style='text-align: center; color: white; opacity: 0.7; font-weight: 600;'>© 2024 Amirudaullah | Data Analyst & QA Specialist</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; color: white; opacity: 0.7; font-weight: 600;'>© 2015 Amirudaullah | Data Analyst & QA Specialist</p>", unsafe_allow_html=True)
+
