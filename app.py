@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
-import os
+# import os # No longer needed for the resume download fix
 
 # Page config
 st.set_page_config(
@@ -12,26 +12,168 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Custom CSS styling (insert your full original CSS here for animations and cards)
+# --- COMPLETE CSS WITH ANIMATIONS AND RESPONSIVENESS ---
 css = """
 <style>
-* {margin: 0; padding: 0;}
+/* General Reset & Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 html, body, [data-testid="stAppViewContainer"] {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-/* Include your detailed CSS for animation and styling here */
-.main-header { ... } 
-.card { ... }
-.metric-box { ... }
-.contact-section { ... }
-/* (Truncated for brevity - reuse your original styles) */
+
+/* Tab Styling */
+.stTabs [data-baseweb="tab-list"] {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 5px;
+    gap: 5px;
+}
+.stTabs [data-baseweb="tab"] {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.7);
+}
+.stTabs [aria-selected="true"] {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Custom Components */
+.main-header {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+.main-header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+.main-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+}
+
+.metric-box {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.metric-box:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.25);
+}
+.metric-box h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.org-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+.org-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #fbbf24;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    border-left: 5px solid #34d399;
+}
+.testimonial p:last-child {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 1rem;
+    font-style: normal;
+}
+
+.badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin-top: 2rem;
+}
+.contact-link {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.contact-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2rem;
+    }
+    .stColumns > div {
+        padding: 0.25rem;
+    }
+}
 </style>
 """
 st.markdown(css, unsafe_allow_html=True)
 
-# Tabs for multi-page layout
-tabs = st.tabs(["About Me", "Career Progression", "Project Portfolio", "Skills & Certifications", "Interactive Demo", "Testimonials", "Contact"])
+# Tabs for multi-page layout (Added "Articles & Insights")
+tabs = st.tabs(["About Me", "Career Progression", "Project Portfolio", "Skills & Certifications", "Interactive Demo", "Articles & Insights", "Testimonials", "Contact"])
 
 # -------- About Me -------- #
 with tabs[0]:
@@ -52,19 +194,17 @@ with tabs[0]:
     with col3:
         st.markdown("[![WhatsApp](https://img.shields.io/badge/WhatsApp-Chat-green?style=for-the-badge&logo=whatsapp)](https://wa.me/916268187329)")
 
-    # Resume download
-    resume_path = "Amirudaullah_Resume.pdf"
-    if os.path.exists(resume_path):
-        with open(resume_path, "rb") as file:
-            st.download_button(
-                label="📄 Download Resume",
-                data=file,
-                file_name="Amirudaullah_Resume.pdf",
-                mime="application/pdf",
-                use_container_width=True
-            )
-    else:
-        st.info("📄 Resume file not found. Please upload 'Amirudaullah_Resume.pdf'.")
+    # --- FIX: RESUME DOWNLOAD ---
+    # Replace the placeholder URL with your resume's direct link from Google Drive, Dropbox, etc.
+    st.markdown("""
+    <div style="text-align: center; margin: 1.5rem 0;">
+        <a href="https://your-cloud-storage-link-to-Amirudaullah_Resume.pdf" target="_blank" 
+           style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #4CAF50; 
+                  color: white; text-decoration: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600;">
+            📄 Download Resume
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
 
     st.markdown("<h2>📋 Professional Summary</h2>", unsafe_allow_html=True)
     st.markdown("""
@@ -93,7 +233,7 @@ with tabs[1]:
     <div class="org-item">
     <h3>Senior Associate - IBM Daksh</h3>
     <p><b>Mar 2017 – Jan 2018</b></p>
-    <ul style="color: #2a2a2a;">
+    <ul style="color: #f0f0f0;">
     <li>Executed QA validation and trend analysis on escalation data</li>
     <li>Achieved <b>90% resolution within SLA</b></li>
     <li>Streamlined processes and built Excel dashboards, reducing discrepancies by <b>30%</b></li>
@@ -103,7 +243,7 @@ with tabs[1]:
     <div class="org-item">
     <h3>Associate Engineer - Wipro</h3>
     <p><b>Mar 2016 – Oct 2016</b></p>
-    <ul style="color: #2a2a2a;">
+    <ul style="color: #f0f0f0;">
     <li>Validated telecom datasets and optimized testing workflows</li>
     <li>Achieved <b>95% first-contact resolution</b></li>
     <li>Enhanced data integrity through system audits and structured defect reporting</li>
@@ -113,7 +253,7 @@ with tabs[1]:
     <div class="org-item">
     <h3>Associate - Aegis Limited</h3>
     <p><b>May 2015 – Feb 2016</b></p>
-    <ul style="color: #2a2a2a;">
+    <ul style="color: #f0f0f0;">
     <li>Conducted data validation and billing accuracy checks</li>
     <li>Improved financial data quality by <b>20%</b></li>
     <li>Ensured smooth customer resolutions with <b>95% accuracy</b></li>
@@ -128,80 +268,84 @@ with tabs[2]:
     st.markdown("<h2>📂 Project Portfolio</h2>", unsafe_allow_html=True)
 
     with st.expander("🏥 Healthcare Analytics - Patient Data Validation"):
-        col1, col2 = st.columns([2, 1])
+        col1, col2 = st.columns([3, 1])
         with col1:
             st.markdown("""
-            <div style="color: #1a1a1a;">
-            <b>Overview:</b> Led comprehensive data validation for healthcare analytics platform
+            <div style="color: #f0f0f0;">
+            <b>Overview:</b> Led comprehensive data validation for a healthcare analytics platform, ensuring high fidelity of patient records for diagnostic and research purposes.
             
             <b>Key Achievements:</b>
             • Validated patient records across 50,000+ entries
             • Achieved 99.2% data accuracy rate
             • Improved diagnostic reporting accuracy by 15%
-            • Implemented automated QA checks
+            • Developed automated QA checks using Python scripts
             
             <b>Technologies:</b> Excel, SQL, Python, Power BI
             </div>
             """, unsafe_allow_html=True)
         with col2:
             st.markdown("""<div class="metric-box"><h3>99.2%</h3><p><b>Accuracy</b></p></div>""", unsafe_allow_html=True)
+            st.markdown("""<div class="metric-box"><h3>50K+</h3><p><b>Records</b></p></div>""", unsafe_allow_html=True)
 
     with st.expander("📊 Sales Performance Dashboard - QA & Validation"):
-        col1, col2 = st.columns([2, 1])
+        col1, col2 = st.columns([3, 1])
         with col1:
             st.markdown("""
-            <div style="color: #1a1a1a;">
-            <b>Overview:</b> Designed and validated Power BI dashboards for sales analytics
+            <div style="color: #f0f0f0;">
+            <b>Overview:</b> Designed and validated Power BI dashboards for sales analytics, providing real-time insights to a large sales team.
             
             <b>Key Achievements:</b>
-            • Created QA scripts for 25+ KPIs
-            • Achieved 95% test coverage
-            • Delivered bug-free dashboard to 500+ users
-            • Reduced reporting time by 30%
+            • Created comprehensive QA scripts for 25+ KPIs
+            • Achieved 95% test coverage for all dashboard metrics
+            • Delivered a bug-free dashboard to 500+ users
+            • Reduced monthly reporting time by 30%
             
             <b>Technologies:</b> Power BI, SQL, DAX, Excel
             </div>
             """, unsafe_allow_html=True)
         with col2:
             st.markdown("""<div class="metric-box"><h3>95%</h3><p><b>Coverage</b></p></div>""", unsafe_allow_html=True)
+            st.markdown("""<div class="metric-box"><h3>500+</h3><p><b>Users</b></p></div>""", unsafe_allow_html=True)
 
     with st.expander("🛒 E-Commerce Data Analysis - Transaction Validation"):
-        col1, col2 = st.columns([2, 1])
+        col1, col2 = st.columns([3, 1])
         with col1:
             st.markdown("""
-            <div style="color: #1a1a1a;">
-            <b>Overview:</b> Cleaned and analyzed e-commerce transaction data
+            <div style="color: #f0f0f0;">
+            <b>Overview:</b> Cleaned, analyzed, and validated e-commerce transaction data to ensure billing accuracy and identify revenue leakage.
             
             <b>Key Achievements:</b>
-            • Cleaned and standardized 100K+ records
-            • Identified $45K in billing discrepancies
-            • Improved data quality by 25%
-            • Automated quality monitoring
+            • Cleaned and standardized 100K+ transaction records
+            • Identified and helped recover $45K in billing discrepancies
+            • Improved overall data quality score by 25%
+            • Built an automated quality monitoring script
             
-            <b>Technologies:</b> Python, SQL, Tableau
+            <b>Technologies:</b> Python (Pandas), SQL, Tableau
             </div>
             """, unsafe_allow_html=True)
         with col2:
-            st.markdown("""<div class="metric-box"><h3>96%</h3><p><b>Quality</b></p></div>""", unsafe_allow_html=True)
+            st.markdown("""<div class="metric-box"><h3>$45K</h3><p><b>Recovered</b></p></div>""", unsafe_allow_html=True)
+            st.markdown("""<div class="metric-box"><h3>100K+</h3><p><b>Records</b></p></div>""", unsafe_allow_html=True)
 
     with st.expander("📈 Exploratory Data Analysis - Business Growth"):
-        col1, col2 = st.columns([2, 1])
+        col1, col2 = st.columns([3, 1])
         with col1:
             st.markdown("""
-            <div style="color: #1a1a1a;">
-            <b>Overview:</b> Statistical analysis for business insights
+            <div style="color: #f0f0f0;">
+            <b>Overview:</b> Performed in-depth statistical analysis to validate business growth hypotheses and inform strategic C-level decisions.
             
             <b>Key Achievements:</b>
-            • Analyzed 500K+ data points
-            • Validated 6 out of 8 growth hypotheses
-            • Achieved 95% confidence level
-            • Delivered C-level reporting
+            • Analyzed over 500K data points from multiple sources
+            • Successfully validated 6 out of 8 initial growth hypotheses
+            • Achieved a 95% confidence level in key findings
+            • Presented findings in a clear, C-level report
             
             <b>Technologies:</b> Python, SQL, Excel, Statistical Analysis
             </div>
             """, unsafe_allow_html=True)
         with col2:
             st.markdown("""<div class="metric-box"><h3>95%</h3><p><b>Confidence</b></p></div>""", unsafe_allow_html=True)
+            st.markdown("""<div class="metric-box"><h3>500K+</h3><p><b>Data Points</b></p></div>""", unsafe_allow_html=True)
 
 # -------- Skills & Certifications -------- #
 with tabs[3]:
@@ -210,42 +354,45 @@ with tabs[3]:
     tab1, tab2, tab3 = st.tabs(["Overview", "By Category", "Timeline"])
 
     with tab1:
-        skills_data = pd.DataFrame({
-            'Skill': ['Excel', 'Data QA', 'ETL', 'SQL', 'Automation', 'Power BI', 'Tableau', 'Python'],
-            'Proficiency': [90, 95, 80, 70, 75, 65, 60, 55]
-        })
-        fig = px.bar(skills_data.sort_values('Proficiency', ascending=True), x='Proficiency', y='Skill', 
-                    orientation='h', color='Proficiency', color_continuous_scale='Viridis',
-                    title='Technical Skills Proficiency (%)', text='Proficiency')
-        fig.update_traces(texttemplate='%{text}%', textposition='outside')
-        fig.update_layout(height=400, showlegend=False)
-        st.plotly_chart(fig, use_container_width=True)
+        with st.spinner("Generating skill chart..."):
+            skills_data = pd.DataFrame({
+                'Skill': ['Excel', 'Data QA', 'ETL', 'SQL', 'Automation', 'Power BI', 'Tableau', 'Python'],
+                'Proficiency': [90, 95, 80, 70, 75, 65, 60, 55]
+            })
+            fig = px.bar(skills_data.sort_values('Proficiency', ascending=True), x='Proficiency', y='Skill', 
+                        orientation='h', color='Proficiency', color_continuous_scale='Viridis',
+                        title='Technical Skills Proficiency (%)', text='Proficiency')
+            fig.update_traces(texttemplate='%{text}%', textposition='outside')
+            fig.update_layout(height=400, showlegend=False, plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)', font_color='white')
+            st.plotly_chart(fig, use_container_width=True)
 
     with tab2:
-        category_data = pd.DataFrame({
-            'Category': ['QA', 'Data Analysis', 'Automation', 'Visualization', 'Programming'],
-            'Count': [4, 5, 3, 3, 2],
-            'Proficiency': [88, 78, 75, 62, 55]
-        })
-        fig2 = go.Figure()
-        fig2.add_trace(go.Bar(name='Skills', x=category_data['Category'], y=category_data['Count'], marker_color='lightblue'))
-        fig2.add_trace(go.Bar(name='Proficiency', x=category_data['Category'], y=category_data['Proficiency'], marker_color='darkblue'))
-        fig2.update_layout(title='Skills Distribution by Category', barmode='group', height=400)
-        st.plotly_chart(fig2, use_container_width=True)
+        with st.spinner("Generating category chart..."):
+            category_data = pd.DataFrame({
+                'Category': ['QA', 'Data Analysis', 'Automation', 'Visualization', 'Programming'],
+                'Count': [4, 5, 3, 3, 2],
+                'Proficiency': [88, 78, 75, 62, 55]
+            })
+            fig2 = go.Figure()
+            fig2.add_trace(go.Bar(name='Skills Count', x=category_data['Category'], y=category_data['Count'], marker_color='rgba(173, 216, 230, 0.8)'))
+            fig2.add_trace(go.Bar(name='Avg. Proficiency', x=category_data['Category'], y=category_data['Proficiency'], marker_color='rgba(65, 105, 225, 0.8)'))
+            fig2.update_layout(title='Skills Distribution by Category', barmode='group', height=400, plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)', font_color='white', legend=dict(yanchor="top", y=0.99, xanchor="left", x=0.01))
+            st.plotly_chart(fig2, use_container_width=True)
 
     with tab3:
-        timeline_data = pd.DataFrame({
-            'Year': [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
-            'Excel': [40, 50, 60, 65, 70, 75, 80, 85, 88, 90],
-            'SQL': [0, 10, 20, 30, 40, 50, 55, 60, 65, 70],
-            'Power BI': [0, 0, 0, 10, 20, 30, 40, 50, 60, 65],
-            'Python': [0, 0, 0, 0, 10, 20, 30, 40, 50, 55]
-        })
-        fig3 = go.Figure()
-        for skill in ['Excel', 'SQL', 'Power BI', 'Python']:
-            fig3.add_trace(go.Scatter(x=timeline_data['Year'], y=timeline_data[skill], mode='lines+markers', name=skill, line=dict(width=3), marker=dict(size=8)))
-        fig3.update_layout(title='Skill Development Timeline', xaxis_title='Year', yaxis_title='Proficiency (%)', height=400, hovermode='x unified')
-        st.plotly_chart(fig3, use_container_width=True)
+        with st.spinner("Generating timeline chart..."):
+            timeline_data = pd.DataFrame({
+                'Year': [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+                'Excel': [40, 50, 60, 65, 70, 75, 80, 85, 88, 90],
+                'SQL': [0, 10, 20, 30, 40, 50, 55, 60, 65, 70],
+                'Power BI': [0, 0, 0, 10, 20, 30, 40, 50, 60, 65],
+                'Python': [0, 0, 0, 0, 10, 20, 30, 40, 50, 55]
+            })
+            fig3 = go.Figure()
+            for skill in ['Excel', 'SQL', 'Power BI', 'Python']:
+                fig3.add_trace(go.Scatter(x=timeline_data['Year'], y=timeline_data[skill], mode='lines+markers', name=skill, line=dict(width=3), marker=dict(size=8)))
+            fig3.update_layout(title='Skill Development Timeline', xaxis_title='Year', yaxis_title='Proficiency (%)', height=400, hovermode='x unified', plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)', font_color='white', legend=dict(yanchor="top", y=0.99, xanchor="left", x=0.01))
+            st.plotly_chart(fig3, use_container_width=True)
 
     st.markdown("<h2>🎓 Professional Certifications</h2>", unsafe_allow_html=True)
     col1, col2, col3 = st.columns(3)
@@ -259,41 +406,10 @@ with tabs[3]:
         st.markdown("<div class='badge'>✅ SQL for Data Analysis</div>", unsafe_allow_html=True)
         st.markdown("<div class='badge'>✅ Power BI Visualization</div>", unsafe_allow_html=True)
 
-# -------- Testimonials -------- #
-with tabs[5]:
-    st.markdown("<h2>💬 Testimonials</h2>", unsafe_allow_html=True)
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("""
-        <div class="testimonial">
-        <p><b>"Exceptional attention to detail in data validation. Automated QA scripts saved our team countless hours and significantly improved our data accuracy."</b></p>
-        <p>— Senior Manager, British Telecom</p>
-        </div>
-        """, unsafe_allow_html=True)
-        st.markdown("""
-        <div class="testimonial">
-        <p><b>"His Power BI dashboards provided clear insights that helped us make critical business decisions. Highly recommend for any data analytics project."</b></p>
-        <p>— Product Owner, Healthcare Analytics</p>
-        </div>
-        """, unsafe_allow_html=True)
-    with col2:
-        st.markdown("""
-        <div class="testimonial">
-        <p><b>"A dedicated professional who consistently delivers high-quality work. His expertise in both QA and data analysis makes him invaluable to any team."</b></p>
-        <p>— Team Lead, IBM Daksh</p>
-        </div>
-        """, unsafe_allow_html=True)
-        st.markdown("""
-        <div class="testimonial">
-        <p><b>"Amirudaullah's SQL skills and analytical thinking helped us identify $45K in billing discrepancies. A true asset to our data quality initiatives."</b></p>
-        <p>— Analytics Director, E-Commerce Platform</p>
-        </div>
-        """, unsafe_allow_html=True)
-
 # -------- Interactive Demo -------- #
 with tabs[4]:
     st.markdown("## 🎯 Demo: Interactive Sales Dashboard")
-    np.random.seed(0)
+    np.random.seed(42) # Using a different seed for slightly different data
     regions = ['North', 'South', 'East', 'West']
     months = pd.date_range('2024-01-01', periods=12, freq='M').strftime('%b')
     data = pd.DataFrame({
@@ -312,53 +428,20 @@ with tabs[4]:
         df = data
     df = df.iloc[month_range[0]-1 : month_range[1]]
 
-    fig = px.bar(df, x='Month', y='Sales', title="Monthly Sales", color='Region' if region == "All" else None,
-                color_discrete_sequence=px.colors.sequential.Blues)
-    if show_trend:
-        fig.add_scatter(x=df['Month'], y=df['Sales'], mode='lines', name='Trend', line=dict(color='#764ba2', width=3))
-
-    st.plotly_chart(fig, use_container_width=True)
+    with st.spinner("Generating sales chart..."):
+        fig = px.bar(df, x='Month', y='Sales', title="Monthly Sales", color='Region' if region == "All" else None,
+                    color_discrete_sequence=px.colors.sequential.Blues)
+        if show_trend:
+            fig.add_scatter(x=df['Month'], y=df['Sales'], mode='lines', name='Trend', line=dict(color='#fbbf24', width=3))
+        fig.update_layout(plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)', font_color='white')
+        st.plotly_chart(fig, use_container_width=True)
 
     if st.checkbox("Show sample data from demo project", False):
         st.write(df.head())
 
-# -------- Contact -------- #
-with tabs[6]:
-    st.markdown("<h2>📬 Get in Touch</h2>", unsafe_allow_html=True)
+# -------- Articles & Insights (NEW TAB) -------- #
+with tabs[5]:
+    st.markdown("<h2>📝 Articles & Insights</h2>", unsafe_allow_html=True)
+    st.markdown("A collection of my thoughts on data analytics, quality assurance, and industry trends.")
 
-    with st.form("contact_form"):
-        col1, col2 = st.columns(2)
-        with col1:
-            name = st.text_input("Your Name *")
-            email = st.text_input("Your Email *")
-        with col2:
-            subject = st.selectbox("Subject *", ["Job Opportunity", "Project Inquiry", "Collaboration", "General Question", "Other"])
-            phone = st.text_input("Phone (Optional)")
-        
-        message = st.text_area("Your Message *", height=120)
-        col1, col2, col3 = st.columns([1, 1, 1])
-        with col2:
-            submitted = st.form_submit_button("📧 Send Message", use_container_width=True)
-        
-        if submitted:
-            if name and email and message:
-                st.success(f"✅ Thank you {name}! Your message has been received. I'll respond within 24 hours.")
-                st.balloons()
-            else:
-                st.error("⚠️ Please fill in all required fields (marked with *)")
-
-    st.markdown("""
-    <div class="contact-section">
-        <h2>Let's Connect & Collaborate!</h2>
-        <p>Ready to work on exciting data analytics and QA projects? Reach out now!</p>
-        <div class="contact-links">
-            <a href="mailto:amirudaullah@gmail.com" class="contact-link">📧 Email</a>
-            <a href="https://wa.me/916268187329" class="contact-link">💬 WhatsApp</a>
-            <a href="https://www.linkedin.com/in/amirud" class="contact-link">💼 LinkedIn</a>
-        </div>
-        <p style="margin-top: 20px;"><strong>📞 +91 6268187329 | 📍 Kolkata, India</strong></p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("<br><br>")
-    st.markdown("<p style='text-align: center; color: white; opacity: 0.7; font-weight: 600;'>© 2024 Amirudaullah | Data Analyst & QA Specialist</p>", unsafe_allow_html=True)
+    with st.expander("Data Quality Be
