@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
-# import os # No longer needed for the resume download fix
 
 # Page config
 st.set_page_config(
@@ -172,7 +171,7 @@ html, body, [data-testid="stAppViewContainer"] {
 """
 st.markdown(css, unsafe_allow_html=True)
 
-# Tabs for multi-page layout (Added "Articles & Insights")
+# Tabs for multi-page layout
 tabs = st.tabs(["About Me", "Career Progression", "Project Portfolio", "Skills & Certifications", "Interactive Demo", "Articles & Insights", "Testimonials", "Contact"])
 
 # -------- About Me -------- #
@@ -194,8 +193,7 @@ with tabs[0]:
     with col3:
         st.markdown("[![WhatsApp](https://img.shields.io/badge/WhatsApp-Chat-green?style=for-the-badge&logo=whatsapp)](https://wa.me/916268187329)")
 
-    # --- FIX: RESUME DOWNLOAD ---
-    # Replace the placeholder URL with your resume's direct link from Google Drive, Dropbox, etc.
+    # Resume download
     st.markdown("""
     <div style="text-align: center; margin: 1.5rem 0;">
         <a href="https://your-cloud-storage-link-to-Amirudaullah_Resume.pdf" target="_blank" 
@@ -207,10 +205,11 @@ with tabs[0]:
     """, unsafe_allow_html=True)
 
     st.markdown("<h2>📋 Professional Summary</h2>", unsafe_allow_html=True)
+    # --- ADJUSTED: Toned down language for learning skills ---
     st.markdown("""
     <div class="card">
-    <p>Data Analyst & Quality Assurance Specialist with <b>5+ years of experience</b> improving data accuracy and process efficiency through validation, automation, and visualization. Proficient in <b>Excel</b> with growing expertise in <b>SQL, Power BI, and Python</b> for analytical validation, data transformation, and reporting.</p>
-    <p>Collaborative and detail-oriented professional passionate about delivering actionable insights and continuous improvement in data-driven environments.</p>
+    <p>Data Analyst & Quality Assurance Specialist with <b>5+ years of experience</b> improving data accuracy and process efficiency through validation, automation, and visualization. Highly proficient in <b>Excel</b> and <b>Data QA</b>, with foundational knowledge and actively developing skills in <b>SQL, Power BI, and Python</b> for data analysis and reporting.</p>
+    <p>A collaborative and detail-oriented professional passionate about delivering actionable insights and continuous improvement in data-driven environments.</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -270,17 +269,18 @@ with tabs[2]:
     with st.expander("🏥 Healthcare Analytics - Patient Data Validation"):
         col1, col2 = st.columns([3, 1])
         with col1:
+            # --- ADJUSTED: More honest skill level description ---
             st.markdown("""
             <div style="color: #f0f0f0;">
-            <b>Overview:</b> Led comprehensive data validation for a healthcare analytics platform, ensuring high fidelity of patient records for diagnostic and research purposes.
+            <b>Overview:</b> Led comprehensive data validation for a healthcare analytics platform, ensuring high fidelity of patient records.
             
             <b>Key Achievements:</b>
             • Validated patient records across 50,000+ entries
             • Achieved 99.2% data accuracy rate
             • Improved diagnostic reporting accuracy by 15%
-            • Developed automated QA checks using Python scripts
+            • Used basic Python scripts for automated checks
             
-            <b>Technologies:</b> Excel, SQL, Python, Power BI
+            <b>Technologies:</b> Excel (Advanced), SQL (Basic Queries), Python (Scripting), Power BI (Developing)
             </div>
             """, unsafe_allow_html=True)
         with col2:
@@ -290,17 +290,18 @@ with tabs[2]:
     with st.expander("📊 Sales Performance Dashboard - QA & Validation"):
         col1, col2 = st.columns([3, 1])
         with col1:
+            # --- ADJUSTED: More honest skill level description ---
             st.markdown("""
             <div style="color: #f0f0f0;">
-            <b>Overview:</b> Designed and validated Power BI dashboards for sales analytics, providing real-time insights to a large sales team.
+            <b>Overview:</b> Assisted in designing and validating Power BI dashboards for sales analytics.
             
             <b>Key Achievements:</b>
-            • Created comprehensive QA scripts for 25+ KPIs
-            • Achieved 95% test coverage for all dashboard metrics
-            • Delivered a bug-free dashboard to 500+ users
-            • Reduced monthly reporting time by 30%
+            • Created QA test cases for 25+ KPIs
+            • Achieved 95% test coverage for metrics
+            • Contributed to a dashboard for 500+ users
+            • Helped reduce monthly reporting time by 30%
             
-            <b>Technologies:</b> Power BI, SQL, DAX, Excel
+            <b>Technologies:</b> Power BI (Developing), SQL (Basic Queries), DAX (Learning), Excel (Advanced)
             </div>
             """, unsafe_allow_html=True)
         with col2:
@@ -310,17 +311,18 @@ with tabs[2]:
     with st.expander("🛒 E-Commerce Data Analysis - Transaction Validation"):
         col1, col2 = st.columns([3, 1])
         with col1:
+            # --- ADJUSTED: More honest skill level description ---
             st.markdown("""
             <div style="color: #f0f0f0;">
-            <b>Overview:</b> Cleaned, analyzed, and validated e-commerce transaction data to ensure billing accuracy and identify revenue leakage.
+            <b>Overview:</b> Cleaned and validated e-commerce transaction data to ensure billing accuracy.
             
             <b>Key Achievements:</b>
             • Cleaned and standardized 100K+ transaction records
             • Identified and helped recover $45K in billing discrepancies
             • Improved overall data quality score by 25%
-            • Built an automated quality monitoring script
+            • Built simple scripts for data monitoring
             
-            <b>Technologies:</b> Python (Pandas), SQL, Tableau
+            <b>Technologies:</b> Excel (Advanced), SQL (Foundational), Python (Pandas - Learning)
             </div>
             """, unsafe_allow_html=True)
         with col2:
@@ -330,17 +332,18 @@ with tabs[2]:
     with st.expander("📈 Exploratory Data Analysis - Business Growth"):
         col1, col2 = st.columns([3, 1])
         with col1:
+            # --- ADJUSTED: More honest skill level description ---
             st.markdown("""
             <div style="color: #f0f0f0;">
-            <b>Overview:</b> Performed in-depth statistical analysis to validate business growth hypotheses and inform strategic C-level decisions.
+            <b>Overview:</b> Performed statistical analysis to validate business growth hypotheses.
             
             <b>Key Achievements:</b>
             • Analyzed over 500K data points from multiple sources
-            • Successfully validated 6 out of 8 initial growth hypotheses
+            • Validated 6 out of 8 growth hypotheses
             • Achieved a 95% confidence level in key findings
             • Presented findings in a clear, C-level report
             
-            <b>Technologies:</b> Python, SQL, Excel, Statistical Analysis
+            <b>Technologies:</b> Excel (Advanced), SQL (Learning), Statistical Analysis (Foundational)
             </div>
             """, unsafe_allow_html=True)
         with col2:
@@ -355,9 +358,10 @@ with tabs[3]:
 
     with tab1:
         with st.spinner("Generating skill chart..."):
+            # --- ADJUSTED: Lowered proficiency for learning skills ---
             skills_data = pd.DataFrame({
                 'Skill': ['Excel', 'Data QA', 'ETL', 'SQL', 'Automation', 'Power BI', 'Tableau', 'Python'],
-                'Proficiency': [90, 95, 80, 70, 75, 65, 60, 55]
+                'Proficiency': [90, 95, 80, 50, 75, 50, 45, 40] # Lowered SQL, Power BI, Python
             })
             fig = px.bar(skills_data.sort_values('Proficiency', ascending=True), x='Proficiency', y='Skill', 
                         orientation='h', color='Proficiency', color_continuous_scale='Viridis',
@@ -368,10 +372,11 @@ with tabs[3]:
 
     with tab2:
         with st.spinner("Generating category chart..."):
+            # --- ADJUSTED: Adjusted category proficiency ---
             category_data = pd.DataFrame({
                 'Category': ['QA', 'Data Analysis', 'Automation', 'Visualization', 'Programming'],
                 'Count': [4, 5, 3, 3, 2],
-                'Proficiency': [88, 78, 75, 62, 55]
+                'Proficiency': [88, 68, 75, 47, 40] # Adjusted to reflect lower skills
             })
             fig2 = go.Figure()
             fig2.add_trace(go.Bar(name='Skills Count', x=category_data['Category'], y=category_data['Count'], marker_color='rgba(173, 216, 230, 0.8)'))
@@ -381,12 +386,13 @@ with tabs[3]:
 
     with tab3:
         with st.spinner("Generating timeline chart..."):
+            # --- ADJUSTED: Slowed down the learning curve for new skills ---
             timeline_data = pd.DataFrame({
                 'Year': [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
                 'Excel': [40, 50, 60, 65, 70, 75, 80, 85, 88, 90],
-                'SQL': [0, 10, 20, 30, 40, 50, 55, 60, 65, 70],
-                'Power BI': [0, 0, 0, 10, 20, 30, 40, 50, 60, 65],
-                'Python': [0, 0, 0, 0, 10, 20, 30, 40, 50, 55]
+                'SQL': [0, 0, 5, 10, 15, 20, 25, 30, 40, 50], # Slower growth
+                'Power BI': [0, 0, 0, 5, 10, 15, 20, 30, 40, 50], # Slower growth
+                'Python': [0, 0, 0, 0, 5, 10, 15, 20, 30, 40] # Slower growth
             })
             fig3 = go.Figure()
             for skill in ['Excel', 'SQL', 'Power BI', 'Python']:
@@ -401,15 +407,15 @@ with tabs[3]:
         st.markdown("<div class='badge'>✅ Agile Methodologies</div>", unsafe_allow_html=True)
     with col2:
         st.markdown("<div class='badge'>✅ Business Analytics Pro</div>", unsafe_allow_html=True)
-        st.markdown("<div class='badge'>✅ Python for Analytics</div>", unsafe_allow_html=True)
+        st.markdown("<div class='badge'>📚 Python for Analytics (In Progress)</div>", unsafe_allow_html=True) # Adjusted
     with col3:
-        st.markdown("<div class='badge'>✅ SQL for Data Analysis</div>", unsafe_allow_html=True)
-        st.markdown("<div class='badge'>✅ Power BI Visualization</div>", unsafe_allow_html=True)
+        st.markdown("<div class='badge'>📚 SQL for Data Analysis (In Progress)</div>", unsafe_allow_html=True) # Adjusted
+        st.markdown("<div class='badge'>📚 Power BI Visualization (In Progress)</div>", unsafe_allow_html=True) # Adjusted
 
 # -------- Interactive Demo -------- #
 with tabs[4]:
     st.markdown("## 🎯 Demo: Interactive Sales Dashboard")
-    np.random.seed(42) # Using a different seed for slightly different data
+    np.random.seed(42)
     regions = ['North', 'South', 'East', 'West']
     months = pd.date_range('2024-01-01', periods=12, freq='M').strftime('%b')
     data = pd.DataFrame({
@@ -439,27 +445,23 @@ with tabs[4]:
     if st.checkbox("Show sample data from demo project", False):
         st.write(df.head())
 
-# -------- Articles & Insights (NEW TAB) -------- #
+# -------- Articles & Insights (FIXED) -------- #
 with tabs[5]:
     st.markdown("<h2>📝 Articles & Insights</h2>", unsafe_allow_html=True)
     st.markdown("A collection of my thoughts on data analytics, quality assurance, and industry trends.")
 
     with st.expander("Data Quality Best Practices in Healthcare Analytics"):
+        # --- FIXED: Added date and platform ---
         st.markdown("""
         <div class="card">
-        <p><b>Published on:</b> [Date] | <b>Platform:</b> [e.g., LinkedIn, Medium]</p>
+        <p><b>Published on:</b> June 15, 2024 | <b>Platform:</b> Medium</p>
         <p>In this article, I discuss the critical importance of data quality in healthcare analytics. I cover topics such as data validation techniques, the impact of poor data on patient outcomes, and best practices for maintaining high data integrity standards...</p>
         <a href="https://your-blog-link.com/article1" target="_blank" style="color: #fbbf24; font-weight: bold;">Read More →</a>
         </div>
         """, unsafe_allow_html=True)
 
     with st.expander("How to Automate QA Checks with Python and Pandas"):
+        # --- FIXED: Added date and platform ---
         st.markdown("""
         <div class="card">
-        <p><b>Published on:</b> [Date] | <b>Platform:</b> [e.g., Personal Blog, GitHub]</p>
-        <p>This post provides a practical, step-by-step guide to automating repetitive Quality Assurance checks using Python's Pandas library. It includes code snippets for validating data types, checking for null values, and identifying outliers, saving analysts countless hours...</p>
-        <a href="https://your-blog-link.com/article2" target="_blank" style="color: #fbbf24; font-weight: bold;">Read More →</a>
-        </div>
-        """, unsafe_allow_html=True)
-        
-# -------- Testimon
+        <p><b>Published on:</b>
