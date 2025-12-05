@@ -193,16 +193,7 @@ with tabs[0]:
     with col3:
         st.markdown("[![WhatsApp](https://img.shields.io/badge/WhatsApp-Chat-green?style=for-the-badge&logo=whatsapp)](https://wa.me/916268187329)")
 
-    # Resume download
-    st.markdown("""
-    <div style="text-align: center; margin: 1.5rem 0;">
-        <a href="https://your-cloud-storage-link-to-Amirudaullah_Resume.pdf" target="_blank" 
-           style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #4CAF50; 
-                  color: white; text-decoration: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600;">
-            📄 Download Resume
-        </a>
-    </div>
-    """, unsafe_allow_html=True)
+    # --- RESUME DOWNLOAD SECTION REMOVED AS REQUESTED ---
 
     st.markdown("<h2>📋 Professional Summary</h2>", unsafe_allow_html=True)
     st.markdown("""
@@ -355,7 +346,7 @@ with tabs[3]:
         with st.spinner("Generating skill chart..."):
             skills_data = pd.DataFrame({
                 'Skill': ['Excel', 'Data QA', 'ETL', 'SQL', 'Automation', 'Power BI', 'Tableau', 'Python'],
-                'Proficiency': [90, 95, 80, 50, 75, 50, 45, 40] # Lowered SQL, Power BI, Python
+                'Proficiency': [90, 95, 80, 50, 75, 50, 45, 40]
             })
             fig = px.bar(skills_data.sort_values('Proficiency', ascending=True), x='Proficiency', y='Skill', 
                         orientation='h', color='Proficiency', color_continuous_scale='Viridis',
@@ -369,7 +360,7 @@ with tabs[3]:
             category_data = pd.DataFrame({
                 'Category': ['QA', 'Data Analysis', 'Automation', 'Visualization', 'Programming'],
                 'Count': [4, 5, 3, 3, 2],
-                'Proficiency': [88, 68, 75, 47, 40] # Adjusted to reflect lower skills
+                'Proficiency': [88, 68, 75, 47, 40]
             })
             fig2 = go.Figure()
             fig2.add_trace(go.Bar(name='Skills Count', x=category_data['Category'], y=category_data['Count'], marker_color='rgba(173, 216, 230, 0.8)'))
@@ -382,9 +373,9 @@ with tabs[3]:
             timeline_data = pd.DataFrame({
                 'Year': [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
                 'Excel': [40, 50, 60, 65, 70, 75, 80, 85, 88, 90],
-                'SQL': [0, 0, 5, 10, 15, 20, 25, 30, 40, 50], # Slower growth
-                'Power BI': [0, 0, 0, 5, 10, 15, 20, 30, 40, 50], # Slower growth
-                'Python': [0, 0, 0, 0, 5, 10, 15, 20, 30, 40] # Slower growth
+                'SQL': [0, 0, 5, 10, 15, 20, 25, 30, 40, 50],
+                'Power BI': [0, 0, 0, 5, 10, 15, 20, 30, 40, 50],
+                'Python': [0, 0, 0, 0, 5, 10, 15, 20, 30, 40]
             })
             fig3 = go.Figure()
             for skill in ['Excel', 'SQL', 'Power BI', 'Python']:
@@ -399,10 +390,10 @@ with tabs[3]:
         st.markdown("<div class='badge'>✅ Agile Methodologies</div>", unsafe_allow_html=True)
     with col2:
         st.markdown("<div class='badge'>✅ Business Analytics Pro</div>", unsafe_allow_html=True)
-        st.markdown("<div class='badge'>📚 Python for Analytics (In Progress)</div>", unsafe_allow_html=True) # Adjusted
+        st.markdown("<div class='badge'>📚 Python for Analytics (In Progress)</div>", unsafe_allow_html=True)
     with col3:
-        st.markdown("<div class='badge'>📚 SQL for Data Analysis (In Progress)</div>", unsafe_allow_html=True) # Adjusted
-        st.markdown("<div class='badge'>📚 Power BI Visualization (In Progress)</div>", unsafe_allow_html=True) # Adjusted
+        st.markdown("<div class='badge'>📚 SQL for Data Analysis (In Progress)</div>", unsafe_allow_html=True)
+        st.markdown("<div class='badge'>📚 Power BI Visualization (In Progress)</div>", unsafe_allow_html=True)
 
 # -------- Interactive Demo -------- #
 with tabs[4]:
@@ -437,7 +428,7 @@ with tabs[4]:
     if st.checkbox("Show sample data from demo project", False):
         st.write(df.head())
 
-# -------- Articles & Insights (FIXED) -------- #
+# -------- Articles & Insights -------- #
 with tabs[5]:
     st.markdown("<h2>📝 Articles & Insights</h2>", unsafe_allow_html=True)
     st.markdown("A collection of my thoughts on data analytics, quality assurance, and industry trends.")
@@ -460,6 +451,17 @@ with tabs[5]:
         </div>
         """, unsafe_allow_html=True)
         
-# -------- Testimonials (FIXED) -------- #
+# -------- Testimonials -------- #
 with tabs[6]:
-    st.markdown("<h2>💬 Testimonials</h2>", unsafe_allow_ht
+    st.markdown("<h2>💬 Testimonials</h2>", unsafe_allow_html=True)
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("""
+        <div class="testimonial">
+        <p>"Exceptional attention to detail in data validation. The automated QA scripts he developed saved our team countless hours and significantly improved our data accuracy."</p>
+        <p>— Senior Manager, British Telecom</p>
+        </div>
+        """, unsafe_allow_html=True)
+        st.markdown("""
+        <div class="testimonial">
+        <p>"His Power BI dashboards provided clear insights that helped us make critical business decisions. Highly recommend for any dat
