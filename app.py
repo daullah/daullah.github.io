@@ -205,7 +205,6 @@ with tabs[0]:
     """, unsafe_allow_html=True)
 
     st.markdown("<h2>📋 Professional Summary</h2>", unsafe_allow_html=True)
-    # --- ADJUSTED: Toned down language for learning skills ---
     st.markdown("""
     <div class="card">
     <p>Data Analyst & Quality Assurance Specialist with <b>5+ years of experience</b> improving data accuracy and process efficiency through validation, automation, and visualization. Highly proficient in <b>Excel</b> and <b>Data QA</b>, with foundational knowledge and actively developing skills in <b>SQL, Power BI, and Python</b> for data analysis and reporting.</p>
@@ -269,7 +268,6 @@ with tabs[2]:
     with st.expander("🏥 Healthcare Analytics - Patient Data Validation"):
         col1, col2 = st.columns([3, 1])
         with col1:
-            # --- ADJUSTED: More honest skill level description ---
             st.markdown("""
             <div style="color: #f0f0f0;">
             <b>Overview:</b> Led comprehensive data validation for a healthcare analytics platform, ensuring high fidelity of patient records.
@@ -290,7 +288,6 @@ with tabs[2]:
     with st.expander("📊 Sales Performance Dashboard - QA & Validation"):
         col1, col2 = st.columns([3, 1])
         with col1:
-            # --- ADJUSTED: More honest skill level description ---
             st.markdown("""
             <div style="color: #f0f0f0;">
             <b>Overview:</b> Assisted in designing and validating Power BI dashboards for sales analytics.
@@ -311,7 +308,6 @@ with tabs[2]:
     with st.expander("🛒 E-Commerce Data Analysis - Transaction Validation"):
         col1, col2 = st.columns([3, 1])
         with col1:
-            # --- ADJUSTED: More honest skill level description ---
             st.markdown("""
             <div style="color: #f0f0f0;">
             <b>Overview:</b> Cleaned and validated e-commerce transaction data to ensure billing accuracy.
@@ -332,7 +328,6 @@ with tabs[2]:
     with st.expander("📈 Exploratory Data Analysis - Business Growth"):
         col1, col2 = st.columns([3, 1])
         with col1:
-            # --- ADJUSTED: More honest skill level description ---
             st.markdown("""
             <div style="color: #f0f0f0;">
             <b>Overview:</b> Performed statistical analysis to validate business growth hypotheses.
@@ -358,7 +353,6 @@ with tabs[3]:
 
     with tab1:
         with st.spinner("Generating skill chart..."):
-            # --- ADJUSTED: Lowered proficiency for learning skills ---
             skills_data = pd.DataFrame({
                 'Skill': ['Excel', 'Data QA', 'ETL', 'SQL', 'Automation', 'Power BI', 'Tableau', 'Python'],
                 'Proficiency': [90, 95, 80, 50, 75, 50, 45, 40] # Lowered SQL, Power BI, Python
@@ -372,7 +366,6 @@ with tabs[3]:
 
     with tab2:
         with st.spinner("Generating category chart..."):
-            # --- ADJUSTED: Adjusted category proficiency ---
             category_data = pd.DataFrame({
                 'Category': ['QA', 'Data Analysis', 'Automation', 'Visualization', 'Programming'],
                 'Count': [4, 5, 3, 3, 2],
@@ -386,7 +379,6 @@ with tabs[3]:
 
     with tab3:
         with st.spinner("Generating timeline chart..."):
-            # --- ADJUSTED: Slowed down the learning curve for new skills ---
             timeline_data = pd.DataFrame({
                 'Year': [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
                 'Excel': [40, 50, 60, 65, 70, 75, 80, 85, 88, 90],
@@ -451,7 +443,6 @@ with tabs[5]:
     st.markdown("A collection of my thoughts on data analytics, quality assurance, and industry trends.")
 
     with st.expander("Data Quality Best Practices in Healthcare Analytics"):
-        # --- FIXED: Added date and platform ---
         st.markdown("""
         <div class="card">
         <p><b>Published on:</b> June 15, 2024 | <b>Platform:</b> Medium</p>
@@ -461,7 +452,14 @@ with tabs[5]:
         """, unsafe_allow_html=True)
 
     with st.expander("How to Automate QA Checks with Python and Pandas"):
-        # --- FIXED: Added date and platform ---
         st.markdown("""
         <div class="card">
-        <p><b>Published on:</b>
+        <p><b>Published on:</b> April 22, 2024 | <b>Platform:</b> Personal Blog</p>
+        <p>This post provides a practical, step-by-step guide to automating repetitive Quality Assurance checks using Python's Pandas library. It includes code snippets for validating data types, checking for null values, and identifying outliers, saving analysts countless hours...</p>
+        <a href="https://your-blog-link.com/article2" target="_blank" style="color: #fbbf24; font-weight: bold;">Read More →</a>
+        </div>
+        """, unsafe_allow_html=True)
+        
+# -------- Testimonials (FIXED) -------- #
+with tabs[6]:
+    st.markdown("<h2>💬 Testimonials</h2>", unsafe_allow_ht
